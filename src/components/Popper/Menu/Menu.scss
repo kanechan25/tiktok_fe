@@ -1,0 +1,43 @@
+// Menu wrapper
+.menu-list {
+    z-index: 999;
+    border-radius: 4px;
+    background-color: var(--color-white) !important;
+    min-width: 170px;
+    .menu-popper {
+        padding: 8px 0px;
+        .menu-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            z-index: 999;
+            width: 100%;
+            margin: 0;
+            box-shadow: none;
+            &:hover {
+                background-color: rgba(22, 24, 35, 0.05);
+            }
+        }
+        .menu-header {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 9px 16px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            .back-btn {
+                height: 100%;
+                background-color: transparent;
+                .back-icon {
+                    height: 18px;
+                }
+            }
+            .header-title {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
