@@ -3,9 +3,14 @@
     z-index: 999;
     border-radius: 4px;
     background-color: var(--color-white) !important;
-    min-width: 170px;
+    min-width: 210px;
+
     .menu-popper {
         padding: 8px 0px;
+        .menu-body {
+            overflow: auto;
+            max-height: 70vh;
+        }
         .menu-item {
             display: flex;
             flex-direction: row;
@@ -14,8 +19,13 @@
             width: 100%;
             margin: 0;
             box-shadow: none;
+            color: var(--color-text);
+            font-weight: 600;
             &:hover {
                 background-color: rgba(22, 24, 35, 0.05);
+            }
+            &.separate {
+                border-top: 1px solid rgba(22, 24, 35, 0.15);
             }
         }
         .menu-header {
@@ -39,5 +49,29 @@
                 transform: translate(-50%, -50%);
             }
         }
+    }
+    .menu-popper *::-webkit-scrollbar {
+        border-radius: 0;
+        width: 8px;
+    }
+    .menu-popper *::-webkit-scrollbar {
+        border-radius: 0;
+        width: 8px;
+    }
+    .menu-popper *::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.15);
+    }
+    .menu-popper *::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.15);
+    }
+    .menu-popper *::-webkit-scrollbar-track {
+        border-radius: 0;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .menu-popper *::-webkit-scrollbar-track {
+        border-radius: 0;
+        background-color: rgba(0, 0, 0, 0);
     }
 }

@@ -4,10 +4,13 @@ import Following from '~/bodypages/Following/Following';
 import Upload from '~/bodypages/Upload/Upload';
 import Profile from '~/bodypages/Profile/Profile';
 
+import routesConfig from '~/config/routes';
+
 export const publicRoutes = [
-    { path: '/', component: Home },
-    { path: '/following', component: Following },
-    { path: '/upload', component: Upload, layout: null },
-    { path: '/profile', component: Profile, layout: OnlyHeader },
+    { path: routesConfig.home, component: Home },
+    { path: routesConfig.following, component: Following },
+    { path: routesConfig.upload, component: Upload, layout: null },
+    { path: routesConfig.profile, component: Profile, layout: OnlyHeader },
 ];
+
 export const privateRoutes = [];

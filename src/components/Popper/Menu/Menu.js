@@ -9,7 +9,13 @@ import HeaderM from './HeaderM';
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({
+    children,
+    items = [],
+    hideOnClick = false,
+    onChange = defaultFn,
+    ...passedProps
+}) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
 
@@ -34,7 +40,10 @@ function Menu({ children, items = [], onChange = defaultFn }) {
 
     return (
         <Tippy
+            {...passedProps}
             interactive
+            hideOnClick={hideOnClick}
+            offset={[10, 8]}
             delay={[0, 200]}
             placement="bottom-end"
             render={(attrs) => (
@@ -48,10 +57,11 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                                 }}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('menu-body')}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}
+            onHide={() => setHistory((prev) => prev.slice(0, 1))}
         >
             {children}
         </Tippy>

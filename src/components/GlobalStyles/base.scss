@@ -11,6 +11,7 @@
     --default-header-height: 60px;
     --default-layout-width: 1150px;
     --default-sidebar-width: 350px;
+    --font-family: 'ProximaNova', sans-serif;
 }
 
 html {
@@ -22,19 +23,31 @@ html {
     box-sizing: border-box;
 }
 body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+    //overflow-y: overlay;
 }
 button,
 input,
 [tabindex] {
     outline: none;
     border: none;
-    background: transparent;
 }
 a[href] {
     color: var(--color-text);
     text-decoration: none;
+}
+
+// Custom tooltip Tippy.css
+body {
+    .tippy-box {
+        background-color: rgba(84, 84, 84, 0.7);
+        border-radius: 6px;
+        font-weight: 500;
+    }
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.7);
+    }
 }
