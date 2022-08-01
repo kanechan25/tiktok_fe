@@ -5,7 +5,7 @@ import { Wrapper as PopperWrapper } from '~/components/Popper/Popper';
 import MenuItem from './MenuItem';
 import styles from './Menu.scss';
 import HeaderM from './HeaderM';
-
+import PropTypes from 'prop-types';
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
 
@@ -68,4 +68,10 @@ function Menu({
     );
 }
 
+Menu.propTypes = {
+    children: PropTypes.node.isRequired,
+    items: PropTypes.array,
+    hideOnClick: PropTypes.bool,
+    onChange: PropTypes.func,
+};
 export default Menu;

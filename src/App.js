@@ -4,7 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import { publicRoutes } from '~/routes/routes';
 import { Fragment } from 'react';
-import DefaultLayout from '~/components/Layout/DefaultLayout/DefaultLayout';
+import DefaultLayout from '~/layouts/DefaultLayout/DefaultLayout';
 import CustomScrollbars from '~/components/CustomScrollbar/CustomScrollbars';
 
 function App() {

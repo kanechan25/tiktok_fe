@@ -10,8 +10,8 @@ import Menu from '~/components/Popper/Menu/Menu';
 import { MENU_NONLOGIN_LIST, MENU_LOGGEDIN_LIST } from './MenuItemList';
 import { InboxIcon, MessageIcon } from '~/components/Icons/Icons';
 import Image from '~/components/Images/Images';
-import Search from '~/components/Layout/Components/Search/Search';
-import routesConfig from '~/config/routes';
+import Search from '~/layouts/Components/Search/Search';
+import config from '~/config/index';
 import Tippy from '@tippyjs/react';
 
 const cx = classNames.bind(styles);
@@ -38,7 +38,7 @@ function Header() {
                 <div className={cx('inner row')}>
                     <div className={cx('left-content col-lg-4 col-md-2 col-4')}>
                         <div className={cx('logo')}>
-                            <Link to={routesConfig.home} className={cx('logo-link')}>
+                            <Link to={config.routes.home} className={cx('logo-link')}>
                                 <img
                                     className={cx('logo-img')}
                                     src={images.logoFull}
@@ -54,7 +54,7 @@ function Header() {
                         {login ? (
                             <div className={cx('already-login')}>
                                 <a
-                                    href={routesConfig.upload}
+                                    href={config.routes.upload}
                                     target={'__blank'}
                                     className={cx('upload')}
                                 >
@@ -103,7 +103,7 @@ function Header() {
                         ) : (
                             <div className={cx('non-login')}>
                                 <a
-                                    href={routesConfig.upload}
+                                    href={config.routes.upload}
                                     target={'__blank'}
                                     className={cx('upload')}
                                 >

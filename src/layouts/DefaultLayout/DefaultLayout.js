@@ -1,9 +1,9 @@
 import classNames from 'classnames/bind';
 import styles from './DefaultLayout.scss';
-
-import Header from '~/components/Layout/DefaultLayout/Header/Header';
-import Sidebar from '~/components/Layout/DefaultLayout/Sidebar/Sidebar';
-import Footer from '~/components/Layout/DefaultLayout/Footer/Footer';
+import PropTypes from 'prop-types';
+import Header from '~/layouts/DefaultLayout/Header/Header';
+import Sidebar from '~/layouts/DefaultLayout/Sidebar/Sidebar';
+import Footer from '~/layouts/DefaultLayout/Footer/Footer';
 
 const cx = classNames.bind(styles);
 
@@ -20,5 +20,7 @@ function DefaultLayout({ children }) {
         </div>
     );
 }
-
+DefaultLayout.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 export default DefaultLayout;
