@@ -1,4 +1,4 @@
-import Menu from '~/components/Popper/Menu/Menu';
+import Menu from '../../components/Popper/Menu/Menu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleQuestion, faEarthAsia, faKeyboard } from '@fortawesome/free-solid-svg-icons';
 const MENU_ITEMS = [

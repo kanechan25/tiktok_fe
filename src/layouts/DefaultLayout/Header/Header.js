@@ -4,15 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import 'tippy.js/dist/tippy.css';
-import styles from './Header.scss';
-import images from '~/assets/img/images';
-import Menu from '~/components/Popper/Menu/Menu';
-import { MENU_NONLOGIN_LIST, MENU_LOGGEDIN_LIST } from './MenuItemList';
-import { InboxIcon, MessageIcon } from '~/components/Icons/Icons';
-import Image from '~/components/Images/Images';
-import Search from '~/layouts/Components/Search/Search';
-import config from '~/config/index';
 import Tippy from '@tippyjs/react';
+import styles from './Header.scss';
+import { MENU_NONLOGIN_LIST, MENU_LOGGEDIN_LIST } from './MenuItemList';
+
+import images from '../../../assets/img/images';
+import Menu from '../../../components/Popper/Menu/Menu';
+import { InboxIcon, MessageIcon } from '../../../components/Icons/Icons';
+import Image from '../../../components/Images/Images';
+import Search from '../../../layouts/Components/Search/Search';
+import config from '../../../config/index';
+import Login from '../../../layouts/Components/Login/Login';
 
 const cx = classNames.bind(styles);
 
@@ -28,8 +30,8 @@ function Header() {
             default:
         }
     };
-    const handleLogin = () => {
-        setLogin(!login);
+    const handleLogin = (isLogin) => {
+        setLogin(isLogin);
     };
 
     return (
@@ -117,12 +119,7 @@ function Header() {
                                         <span className={cx('upload-btn-text')}>Upload</span>
                                     </button>
                                 </a>
-                                <button
-                                    className={cx('btn right-btn login-btn')}
-                                    onClick={handleLogin}
-                                >
-                                    <span className={cx('login-btn-text')}>Log In</span>
-                                </button>
+                                {/* <Login handleLogin={handleLogin} /> */}
                                 <Menu items={MENU_NONLOGIN_LIST} onChange={handleMenuChange}>
                                     <button className={cx('see-more')}>
                                         <FontAwesomeIcon

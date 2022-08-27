@@ -1,4 +1,4 @@
-import Header from '~/layouts/DefaultLayout/Header/Header';
+import Header from '../../layouts/DefaultLayout/Header/Header';
 import PropTypes from 'prop-types';
 
 function OnlyHeader({ children }) {

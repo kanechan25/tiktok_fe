@@ -1,9 +1,8 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["src/*"],
-      "underscore": ["lodash"]
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "underscore": ["lodash"]
+        }
     }
-  }
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
-import { Wrapper as PopperWrapper } from '~/components/Popper/Popper';
+import { Wrapper as PopperWrapper } from '../../../components/Popper/Popper';
 import MenuItem from './MenuItem';
 import styles from './Menu.scss';
 import HeaderM from './HeaderM';
@@ -63,6 +63,7 @@ function Menu({
             placement="bottom-end"
             render={renderResult}
             onHide={handleResetMenu}
+            // visible={true}
         >
             {children}
         </Tippy>

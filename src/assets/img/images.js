@@ -1,8 +1,8 @@
 const images = {
-    logoIcon: require('~/assets/img/logo-tiktok.svg').default,
-    logoFull: require('~/assets/img/logo-full.svg').default,
-    search: require('~/assets/img/search.svg').default,
-    noImage: require('~/assets/img/image-not-found.svg').default,
+    logoIcon: require('../img/logo-tiktok.svg').default,
+    logoFull: require('../img/logo-full.svg').default,
+    search: require('../img/search.svg').default,
+    noImage: require('../img/image-not-found.svg').default,
 };
 
 export default images;

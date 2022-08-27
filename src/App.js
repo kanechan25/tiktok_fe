@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-
-import { publicRoutes } from '~/routes/routes';
 import { Fragment } from 'react';
-import DefaultLayout from '~/layouts/DefaultLayout/DefaultLayout';
-import CustomScrollbars from '~/components/CustomScrollbar/CustomScrollbars';
+
+import { publicRoutes } from './routes/routes';
+import DefaultLayout from './layouts/DefaultLayout/DefaultLayout';
+import CustomScrollbars from './components/CustomScrollbar/CustomScrollbars';
 
 function App() {
     return (

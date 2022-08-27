@@ -1,6 +1,6 @@
 import { useState, forwardRef } from 'react';
 import classNames from 'classnames';
-import images from '~/assets/img/images';
+import images from '../../assets/img/images';
 import styles from './Images.scss';
 import PropTypes from 'prop-types';
 

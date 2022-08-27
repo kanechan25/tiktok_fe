@@ -286,6 +286,7 @@ export const MENU_LOGGEDIN_LIST = [
     {
         icon: <FontAwesomeIcon icon={faSignOut} />,
         title: 'Log out',
+        id: 'btn-logout',
         separate: true,
     },
 ];

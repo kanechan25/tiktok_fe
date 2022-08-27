@@ -1,15 +1,16 @@
 import { useEffect, useState, useRef } from 'react';
-import { useDebounce } from '~/hooks';
+import { useDebounce } from '../../../hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
-import { Wrapper as PopperWrapper } from '~/components/Popper/Popper';
 import styles from './Search.scss';
-import AccountItem from '~/components/AccountItem/AccountItem';
-import { SearchIcon } from '~/components/Icons/Icons';
-import * as searchServices from '~/services/searchServices';
+
+import { Wrapper as PopperWrapper } from '../../../components/Popper/Popper';
+import AccountItem from '../../../components/AccountItem/AccountItem';
+import { SearchIcon } from '../../../components/Icons/Icons';
+import * as searchServices from '../../../services/searchServices';
 
 const cx = classNames.bind(styles);
 

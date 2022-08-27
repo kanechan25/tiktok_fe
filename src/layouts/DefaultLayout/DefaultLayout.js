@@ -1,9 +1,9 @@
 import classNames from 'classnames/bind';
 import styles from './DefaultLayout.scss';
 import PropTypes from 'prop-types';
-import Header from '~/layouts/DefaultLayout/Header/Header';
-import Sidebar from '~/layouts/DefaultLayout/Sidebar/Sidebar';
-import Footer from '~/layouts/DefaultLayout/Footer/Footer';
+import Header from '../../layouts/DefaultLayout/Header/Header';
+import Sidebar from '../../layouts/DefaultLayout/Sidebar/Sidebar';
+import Footer from '../../layouts/DefaultLayout/Footer/Footer';
 
 const cx = classNames.bind(styles);
 

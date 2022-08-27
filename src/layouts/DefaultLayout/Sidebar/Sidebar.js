@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import config from '~/config';
+import config from '../../../config';
 import styles from './Sidebar.scss';
 import Menu from './Menu/Menu';
 import MenuItem from './Menu/MenuItem';
@@ -10,7 +10,7 @@ import {
     GroupUserIconActive,
     LiveIcon,
     LiveIconActive,
-} from '~/components/Icons/Icons';
+} from '../../../components/Icons/Icons';
 
 const cx = classNames.bind(styles);
 
