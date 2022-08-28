@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
-import { Wrapper as PopperWrapper } from '../../../components/Popper/Popper';
+
 import MenuItem from './MenuItem';
 import styles from './Menu.scss';
 import HeaderM from './HeaderM';
 import PropTypes from 'prop-types';
+import { Wrapper as PopperWrapper } from '../../../components/Popper/Popper';
+
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
 
@@ -37,6 +39,7 @@ function Menu({
             );
         });
     };
+
     const renderResult = (attrs) => (
         <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
             <PopperWrapper className={cx('menu-popper')}>
@@ -54,19 +57,21 @@ function Menu({
     };
 
     return (
-        <Tippy
-            {...passedProps}
-            interactive
-            hideOnClick={hideOnClick}
-            offset={[10, 8]}
-            delay={[0, 200]}
-            placement="bottom-end"
-            render={renderResult}
-            onHide={handleResetMenu}
-            // visible={true}
-        >
-            {children}
-        </Tippy>
+        <>
+            <Tippy
+                {...passedProps}
+                interactive
+                // visible
+                hideOnClick={hideOnClick}
+                offset={[10, 8]}
+                delay={[0, 200]}
+                placement="bottom-end"
+                render={renderResult}
+                onHide={handleResetMenu}
+            >
+                {children}
+            </Tippy>
+        </>
     );
 }
 

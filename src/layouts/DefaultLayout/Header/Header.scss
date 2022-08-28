@@ -100,6 +100,15 @@
                     border-radius: 50%;
                     cursor: pointer;
                 }
+                .wrapper-logout {
+                    display: flex;
+                    align-items: center;
+                    margin: 3px 0px 0px 8px;
+                    .logout-btn {
+                        font-size: 20px;
+                        background: transparent;
+                    }
+                }
             }
         }
     }

@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faEllipsisVertical, faSignOut } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import 'tippy.js/dist/tippy.css';
 import Tippy from '@tippyjs/react';
 import styles from './Header.scss';
 import { MENU_NONLOGIN_LIST, MENU_LOGGEDIN_LIST } from './MenuItemList';
+import { GoogleLogout } from 'react-google-login';
 
 import images from '../../../assets/img/images';
 import Menu from '../../../components/Popper/Menu/Menu';
@@ -19,8 +20,15 @@ import Login from '../../../layouts/Components/Login/Login';
 const cx = classNames.bind(styles);
 
 function Header() {
-    const [login, setLogin] = useState(false);
-
+    const [login, setLogin] = useState(localStorage.getItem('loginTiktokData') ? true : false);
+    const [urlAvatar, setUrlAvatar] = useState(() => {
+        if (localStorage.getItem('loginTiktokData')) {
+            const loginTiktokData = JSON.parse(localStorage.getItem('loginTiktokData'));
+            return loginTiktokData.imageUrl;
+        } else {
+            return '';
+        }
+    });
     //handle logic
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
@@ -30,10 +38,18 @@ function Header() {
             default:
         }
     };
-    const handleLogin = (isLogin) => {
-        setLogin(isLogin);
+
+    const handleLogin = (loginData) => {
+        console.log('login data pass: ', loginData);
+        setLogin(loginData.isLogin);
+        setUrlAvatar(loginData.imageUrl);
     };
 
+    const logout = () => {
+        localStorage.removeItem('loginTiktokData');
+        localStorage.removeItem('userTiktokData');
+        setLogin(false);
+    };
     return (
         <header className={cx('wrapper-header')}>
             <div className={cx('container-header container')}>
@@ -96,11 +112,26 @@ function Header() {
                                 <Menu items={MENU_LOGGEDIN_LIST} onChange={handleMenuChange}>
                                     <Image
                                         className={cx('user-avatar')}
-                                        src="https://avatars.githubusercontent.com/u/85122363?v=4"
+                                        src={urlAvatar}
                                         alt="img"
                                         fallback="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1663610619807746.jpeg?x-expires=1659153600&x-signature=XNtEkI0N0OrJ8dBXqFbpEs9mOPk%3D"
                                     />
                                 </Menu>
+                                <div className="wrapper-logout">
+                                    <GoogleLogout
+                                        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                                        render={(renderProps) => (
+                                            <button
+                                                className="logout-btn"
+                                                onClick={renderProps.onClick}
+                                                disabled={renderProps.disabled}
+                                            >
+                                                <FontAwesomeIcon icon={faSignOut} />
+                                            </button>
+                                        )}
+                                        onLogoutSuccess={logout}
+                                    />
+                                </div>
                             </div>
                         ) : (
                             <div className={cx('non-login')}>
@@ -119,7 +150,7 @@ function Header() {
                                         <span className={cx('upload-btn-text')}>Upload</span>
                                     </button>
                                 </a>
-                                {/* <Login handleLogin={handleLogin} /> */}
+                                <Login handleLogin={handleLogin} />
                                 <Menu items={MENU_NONLOGIN_LIST} onChange={handleMenuChange}>
                                     <button className={cx('see-more')}>
                                         <FontAwesomeIcon

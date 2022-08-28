@@ -1,39 +1,9 @@
 import './Login.scss';
-import GoogleLogin from 'react-google-login';
+import { GoogleLogin } from 'react-google-login';
 import { useState, useEffect } from 'react';
 import { gapi } from 'gapi-script';
 
 function Login({ handleLogin }) {
-    const [loginData, setLoginData] = useState(
-        localStorage.getItem('loginData')
-            ? JSON.parse(localStorage.getItem('loginData'))
-            : null,
-    );
-    const handleFailure = (errorData) => {
-        console.log(errorData);
-    };
-    const handleLoginGoogle = async (googleData) => {
-        console.log('google Data: ', googleData);
-
-        const res = await fetch('/api/google-login', {
-            method: 'POST',
-            body: JSON.stringify({
-                token: googleData.tokenId,
-            }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-        const data = await res.json();
-        setLoginData(googleData);
-        localStorage.setItem('loginData', JSON.stringify(data));
-        console.log('logged in of: ', data);
-    };
-    const handleLogout = () => {
-        console.log('Logout....');
-        localStorage.removeItem('loginData');
-        setLoginData(null);
-    };
     useEffect(() => {
         function start() {
             gapi.client.init({
@@ -43,21 +13,63 @@ function Login({ handleLogin }) {
         }
         gapi.load('client:auth2', start);
     }, []);
+    const [loginStatus, setLoginStatus] = useState(false);
 
-    console.log('google Login is: ', GoogleLogin);
+    const [loginTiktokData, setLoginData] = useState(
+        localStorage.getItem('loginTiktokData')
+            ? JSON.parse(localStorage.getItem('loginTiktokData'))
+            : null,
+    );
+
+    const responseGoogle = (response) => {
+        console.log(response);
+        setLoginStatus(true);
+
+        //save localstorage
+        setLoginData(response.profileObj);
+        localStorage.setItem('loginTiktokData', JSON.stringify(response.profileObj));
+        localStorage.setItem('userTiktokData', JSON.stringify(response));
+
+        //pass data to Header (parent)
+        (function () {
+            handleLogin({
+                isLogin: true,
+                imageUrl: response.profileObj.imageUrl,
+            });
+        })();
+    };
+
+    // const logout = () => {
+    //     console.log('logout');
+    //     setLoginStatus(false);
+    //     localStorage.removeItem('loginTiktokData');
+    //     localStorage.removeItem('userTiktokData');
+    //     setLoginData(null);
+    // };
     return (
-        <div className="wrapper-Login">
-            <button className="btn right-btn login-btn" onClick={() => handleLogin(true)}>
-                <span className="login-btn-text">Log In</span>
-            </button>
-            <div>
-                {loginData ? (
-                    <div>
-                        <h3> You Logged in as {loginData.profileObj.email}</h3>
-                        <button onClick={handleLogout}>Logout</button>
-                    </div>
-                ) : (
-                    <GoogleLogin
+        <div className="wrapper-login">
+            {!loginStatus && !loginTiktokData && (
+                <GoogleLogin
+                    clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                    render={(renderProps) => (
+                        <button
+                            className="btn right-btn login-btn"
+                            onClick={renderProps.onClick}
+                            disabled={renderProps.disabled}
+                        >
+                            <span className="login-btn-text">Log In</span>
+                        </button>
+                    )}
+                    onSuccess={responseGoogle}
+                    onFailure={responseGoogle}
+                    cookiePolicy={'single_host_origin'}
+                />
+            )}
+            {/* {!loginStatus && loginTiktokData && (
+                <div>
+                    <img src={loginTiktokData.imageUrl} alt={loginTiktokData.name} />
+                    <br />
+                    <GoogleLogout
                         clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                         render={(renderProps) => (
                             <button
@@ -65,17 +77,33 @@ function Login({ handleLogin }) {
                                 onClick={renderProps.onClick}
                                 disabled={renderProps.disabled}
                             >
-                                <span className="login-btn-text">Google</span>
+                                <span className="login-btn-text">Log Out</span>
                             </button>
                         )}
-                        onSuccess={handleLoginGoogle}
-                        onFailure={handleFailure}
-                        cookiePolicy={'single_host_origin'}
-                    ></GoogleLogin>
-                )}
-            </div>
+                        onLogoutSuccess={logout}
+                    />
+                </div>
+            )}
+            {loginStatus && (
+                <div>
+                    <img src={imageUrl} alt="avatar" />
+                    <br />
+                    <GoogleLogout
+                        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                        render={(renderProps) => (
+                            <button
+                                className="btn right-btn login-btn"
+                                onClick={renderProps.onClick}
+                                disabled={renderProps.disabled}
+                            >
+                                <span className="login-btn-text">Log Out</span>
+                            </button>
+                        )}
+                        onLogoutSuccess={logout}
+                    />
+                </div>
+            )} */}
         </div>
     );
 }
-
 export default Login;
