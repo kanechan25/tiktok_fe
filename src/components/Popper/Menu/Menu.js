@@ -16,6 +16,7 @@ function Menu({
     items = [],
     hideOnClick = false,
     onChange = defaultFn,
+    handleLogout,
     ...passedProps
 }) {
     const [history, setHistory] = useState([{ data: items }]);
@@ -35,6 +36,7 @@ function Menu({
                             onChange(item);
                         }
                     }}
+                    handleLogout={handleLogout}
                 />
             );
         });

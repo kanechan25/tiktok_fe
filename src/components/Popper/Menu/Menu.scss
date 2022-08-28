@@ -49,6 +49,9 @@
                 transform: translate(-50%, -50%);
             }
         }
+        #btn-logout {
+            border-top: 0.5px solid rgba(0, 0, 0, 0.25);
+        }
     }
     .menu-popper *::-webkit-scrollbar {
         border-radius: 0;

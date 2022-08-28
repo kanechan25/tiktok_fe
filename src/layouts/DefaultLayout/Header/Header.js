@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faEllipsisVertical, faSignOut } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import 'tippy.js/dist/tippy.css';
 import Tippy from '@tippyjs/react';
 import styles from './Header.scss';
 import { MENU_NONLOGIN_LIST, MENU_LOGGEDIN_LIST } from './MenuItemList';
-import { GoogleLogout } from 'react-google-login';
 
 import images from '../../../assets/img/images';
 import Menu from '../../../components/Popper/Menu/Menu';
@@ -40,15 +39,14 @@ function Header() {
     };
 
     const handleLogin = (loginData) => {
-        console.log('login data pass: ', loginData);
-        setLogin(loginData.isLogin);
         setUrlAvatar(loginData.imageUrl);
+        setLogin(loginData.isLogin);
     };
 
-    const logout = () => {
+    const handleLogout = (isLogout) => {
         localStorage.removeItem('loginTiktokData');
         localStorage.removeItem('userTiktokData');
-        setLogin(false);
+        setLogin(!isLogout);
     };
     return (
         <header className={cx('wrapper-header')}>
@@ -109,7 +107,11 @@ function Header() {
                                         <div className={'inbox-number'}>24</div>
                                     </div>
                                 </Tippy>
-                                <Menu items={MENU_LOGGEDIN_LIST} onChange={handleMenuChange}>
+                                <Menu
+                                    items={MENU_LOGGEDIN_LIST}
+                                    onChange={handleMenuChange}
+                                    handleLogout={handleLogout}
+                                >
                                     <Image
                                         className={cx('user-avatar')}
                                         src={urlAvatar}
@@ -117,7 +119,7 @@ function Header() {
                                         fallback="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1663610619807746.jpeg?x-expires=1659153600&x-signature=XNtEkI0N0OrJ8dBXqFbpEs9mOPk%3D"
                                     />
                                 </Menu>
-                                <div className="wrapper-logout">
+                                {/* <div className="wrapper-logout">
                                     <GoogleLogout
                                         clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                                         render={(renderProps) => (
@@ -129,9 +131,9 @@ function Header() {
                                                 <FontAwesomeIcon icon={faSignOut} />
                                             </button>
                                         )}
-                                        onLogoutSuccess={logout}
+                                        onLogoutSuccess={handleLogout}
                                     />
-                                </div>
+                                </div> */}
                             </div>
                         ) : (
                             <div className={cx('non-login')}>
