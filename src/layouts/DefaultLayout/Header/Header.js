@@ -119,21 +119,6 @@ function Header() {
                                         fallback="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1663610619807746.jpeg?x-expires=1659153600&x-signature=XNtEkI0N0OrJ8dBXqFbpEs9mOPk%3D"
                                     />
                                 </Menu>
-                                {/* <div className="wrapper-logout">
-                                    <GoogleLogout
-                                        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-                                        render={(renderProps) => (
-                                            <button
-                                                className="logout-btn"
-                                                onClick={renderProps.onClick}
-                                                disabled={renderProps.disabled}
-                                            >
-                                                <FontAwesomeIcon icon={faSignOut} />
-                                            </button>
-                                        )}
-                                        onLogoutSuccess={handleLogout}
-                                    />
-                                </div> */}
                             </div>
                         ) : (
                             <div className={cx('non-login')}>

@@ -1,8 +1,8 @@
-import * as httpRequest from '../utils/httpRequest';
+import { kaneRequest } from '../utils/httpRequest';
 
 export const search = async (q, type) => {
     try {
-        const res = await httpRequest.get(`users/search`, {
+        const res = await kaneRequest.get(`user/search`, {
             params: {
                 q,
                 type,

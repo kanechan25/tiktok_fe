@@ -39,13 +39,6 @@ function Login({ handleLogin }) {
         })();
     };
 
-    // const logout = () => {
-    //     console.log('logout');
-    //     setLoginStatus(false);
-    //     localStorage.removeItem('loginTiktokData');
-    //     localStorage.removeItem('userTiktokData');
-    //     setLoginData(null);
-    // };
     return (
         <div className="wrapper-login">
             {!loginStatus && !loginTiktokData && (
@@ -65,26 +58,6 @@ function Login({ handleLogin }) {
                     cookiePolicy={'single_host_origin'}
                 />
             )}
-            {/* 
-            {loginStatus && (
-                <div>
-                    <img src={imageUrl} alt="avatar" />
-                    <br />
-                    <GoogleLogout
-                        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-                        render={(renderProps) => (
-                            <button
-                                className="btn right-btn login-btn"
-                                onClick={renderProps.onClick}
-                                disabled={renderProps.disabled}
-                            >
-                                <span className="login-btn-text">Log Out</span>
-                            </button>
-                        )}
-                        onLogoutSuccess={logout}
-                    />
-                </div>
-            )} */}
         </div>
     );
 }
