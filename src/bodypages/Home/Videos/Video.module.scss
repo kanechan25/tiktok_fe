@@ -1,0 +1,27 @@
+.wrapper-slice-video {
+    .video-container {
+        .video-header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            .header-info {
+                display: flex;
+            }
+            .following-status {
+                .status-btn {
+                    background-color: transparent;
+                    width: 120px !important;
+                    height: 30px;
+                }
+            }
+        }
+        .video-body {
+            display: flex;
+            .video-interact {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+    }
+}
