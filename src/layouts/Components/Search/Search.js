@@ -32,8 +32,8 @@ function Search() {
         const fetchApi = async () => {
             try {
                 setLoading(true);
-                const result = await searchServices.search(debounce, 'less');
-                setSearchResult(result);
+                const result = await searchServices.searchServices(debounce, 6);
+                setSearchResult(result.data);
                 setLoading(false);
             } catch (error) {
                 setLoading(false);

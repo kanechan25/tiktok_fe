@@ -9,7 +9,6 @@ function Footer() {
     return (
         <footer>
             <div className={cx('wrapper-footer')}>
-                <div className={cx('footer-container')}>Footer</div>
                 <button className={cx('up-top')}>
                     <FontAwesomeIcon icon={faCircleChevronUp} className={cx('up-top-icon')} />
                 </button>

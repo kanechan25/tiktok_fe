@@ -1,9 +1,11 @@
 import './Login.scss';
 import { GoogleLogin } from 'react-google-login';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { gapi } from 'gapi-script';
+import AppContext from '../../../components/Context/AppContext';
 
 function Login({ handleLogin }) {
+    const { setIsLogin } = useContext(AppContext);
     useEffect(() => {
         function start() {
             gapi.client.init({
@@ -22,21 +24,22 @@ function Login({ handleLogin }) {
     );
 
     const responseGoogle = (response) => {
-        console.log(response);
-        setLoginStatus(true);
+        if (response && response.profileObj) {
+            setLoginStatus(true);
+            setIsLogin(true);
+            //save localstorage
+            setLoginData(response.profileObj);
+            localStorage.setItem('loginTiktokData', JSON.stringify(response.profileObj));
+            localStorage.setItem('userTiktokData', JSON.stringify(response));
 
-        //save localstorage
-        setLoginData(response.profileObj);
-        localStorage.setItem('loginTiktokData', JSON.stringify(response.profileObj));
-        localStorage.setItem('userTiktokData', JSON.stringify(response));
-
-        //pass data to Header (parent)
-        (function () {
-            handleLogin({
-                isLogin: true,
-                imageUrl: response.profileObj.imageUrl,
-            });
-        })();
+            //pass data to Header (parent)
+            (function () {
+                handleLogin({
+                    isLogin: true,
+                    imageUrl: response.profileObj.imageUrl,
+                });
+            })();
+        }
     };
 
     return (

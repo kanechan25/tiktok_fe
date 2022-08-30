@@ -1,12 +1,8 @@
 .wrapper-home {
     display: flex;
-    height: 1000px;
-    .btn-login-test {
-        .login-btn {
-            height: 50px;
-            width: 100px;
-            margin-top: 20px;
-            font-size: 20px;
-        }
+    justify-content: center;
+    align-items: center;
+    .home-container {
+        display: flex;
     }
 }

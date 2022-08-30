@@ -52,3 +52,24 @@
         }
     }
 }
+
+// CSS for AccountPreview
+.account-detail-wrapper {
+    position: absolute;
+}
+
+@media (max-width: 768px) {
+    .wrapper-suggest {
+        .label {
+            display: none;
+        }
+        .more {
+            display: none;
+        }
+    }
+    .wrapper-account-item {
+        .info {
+            display: none;
+        }
+    }
+}

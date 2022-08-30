@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Image from '../../Images/Images';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { nFormatter } from '../../../assets/function/nFormat';
 const cx = classNames.bind(styles);
 
 function AccountPreview({ data }) {
@@ -28,11 +28,11 @@ function AccountPreview({ data }) {
             </div>
             <div className={cx('about-prv')}>
                 <div className={cx('about-spec follow')}>
-                    <strong>6.9M</strong>
+                    <strong>{nFormatter(data.followers, 2)}</strong>
                     <span className="text-about"> Followers</span>
                 </div>
                 <div className={cx('about-spec like')}>
-                    <strong>218.9M</strong>
+                    <strong>{nFormatter(data.likes, 1)}</strong>
                     <span className="text-about"> Likes</span>
                 </div>
             </div>

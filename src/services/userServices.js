@@ -1,15 +1,15 @@
-import { kaneRequest } from '../utils/httpRequest';
+import { httpRequest } from '../utils/httpRequest';
 
 const getAllUserService = () => {
-    return kaneRequest.get('/api/user');
+    return httpRequest.get('/api/user');
 };
 
 const getFollowedUserService = () => {
-    return kaneRequest.get('/api/user/followed');
+    return httpRequest.get('/api/user/followed');
 };
 
 const getSuggestedUserService = () => {
-    return kaneRequest.get('/api/user/suggested');
+    return httpRequest.get('/api/user/suggested');
 };
 
 export { getAllUserService, getFollowedUserService, getSuggestedUserService };

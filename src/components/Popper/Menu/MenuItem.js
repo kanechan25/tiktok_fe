@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+
 import classNames from 'classnames/bind';
 import Button from '../../../components/Button/Button';
 import styles from './Menu.scss';
@@ -5,15 +7,19 @@ import PropTypes from 'prop-types';
 import { GoogleLogout } from 'react-google-login';
 import { faSignOut } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import AppContext from '../../../components/Context/AppContext';
 
 const cx = classNames.bind(styles);
 
 function MenuItem({ data, onClick, handleLogout }) {
+    const { setIsLogin } = useContext(AppContext);
+
     const classes = cx('menu-item', {
         separate: data.separate,
     });
     const ids = data.id;
     const onClickLogout = () => {
+        setIsLogin(false);
         (function () {
             handleLogout({
                 isLogout: true,

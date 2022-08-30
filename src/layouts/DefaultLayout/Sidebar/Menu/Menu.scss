@@ -27,3 +27,13 @@
         margin-top: 4px;
     }
 }
+
+@media (max-width: 768px) {
+    .menu-item {
+        justify-content: center;
+
+        .title {
+            display: none;
+        }
+    }
+}
