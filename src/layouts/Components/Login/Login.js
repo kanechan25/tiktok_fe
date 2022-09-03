@@ -27,6 +27,7 @@ function Login({ handleLogin }) {
         if (response && response.profileObj) {
             setLoginStatus(true);
             setIsLogin(true);
+            // console.log('context now is: ', AppContext);
             //save localstorage
             setLoginData(response.profileObj);
             localStorage.setItem('loginTiktokData', JSON.stringify(response.profileObj));
