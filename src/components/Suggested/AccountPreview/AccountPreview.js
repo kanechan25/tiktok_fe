@@ -19,12 +19,12 @@ function AccountPreview({ data }) {
             </div>
             <div className={cx('info-prv')}>
                 <div className={cx('name')}>
-                    <span>{data.full_name}</span>
+                    <span>{data.nick_name}</span>
                     {data.tick && (
                         <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
                     )}
                 </div>
-                <span className={cx('username')}>{data.nick_name}</span>
+                <span className={cx('username')}>{data.full_name}</span>
             </div>
             <div className={cx('about-prv')}>
                 <div className={cx('about-spec follow')}>

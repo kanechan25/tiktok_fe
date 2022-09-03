@@ -6,6 +6,22 @@
             width: 100%;
             .header-info {
                 display: flex;
+                .header-info-avatar {
+                    .avatar {
+                    }
+                }
+                .header-info-user {
+                    .header-info-acc {
+                        .header-info-name {
+                        }
+                    }
+                    .header-info-desc {
+                        .header-info-hashtag {
+                        }
+                    }
+                    .header-info-music {
+                    }
+                }
             }
             .following-status {
                 .status-btn {
@@ -21,6 +37,17 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                .interactable {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                .video-like {
+                }
+                .video-cmt {
+                }
+                .video-share {
+                }
             }
         }
     }

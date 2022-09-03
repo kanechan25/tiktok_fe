@@ -40,7 +40,7 @@ function AccountItem({ data }) {
                         />
                         <div className={cx('info')}>
                             <div className={cx('name')}>
-                                <span>{data.full_name}</span>
+                                <span>{data.nick_name}</span>
                                 {data.tick && (
                                     <FontAwesomeIcon
                                         className={cx('check')}
@@ -48,7 +48,7 @@ function AccountItem({ data }) {
                                     />
                                 )}
                             </div>
-                            <span className={cx('username')}>{data.nick_name}</span>
+                            <span className={cx('username')}>{data.full_name}</span>
                         </div>
                     </Link>
                 </div>

@@ -19,6 +19,7 @@
         "express": "^4.17.2",
         "gapi-script": "^1.2.0",
         "google-auth-library": "^7.11.0",
+        "jquery": "^3.6.1",
         "normalize.css": "^8.0.1",
         "react": "^18.2.0",
         "react-custom-scrollbars": "^4.2.1",

@@ -12,4 +12,14 @@ const getSuggestedUserService = () => {
     return httpRequest.get('/api/user/suggested');
 };
 
-export { getAllUserService, getFollowedUserService, getSuggestedUserService };
+const getIsVideoUserService = (n) => {
+    // console.log('n query is:', n);
+    return httpRequest.get(`/api/user/isvideo?n=${n}`);
+};
+
+export {
+    getAllUserService,
+    getFollowedUserService,
+    getSuggestedUserService,
+    getIsVideoUserService,
+};
