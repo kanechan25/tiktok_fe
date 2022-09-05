@@ -29,7 +29,7 @@ function AccountItem({ data }) {
                 delay={[800, 0]}
                 render={renderPreview}
                 placement="bottom"
-                offset={[-42, 0]}
+                offset={[-140, 0]}
             >
                 <div className={cx('account-items')}>
                     <Link to={`/@${data.nick_name}`} className={cx('wrapper-account-item')}>

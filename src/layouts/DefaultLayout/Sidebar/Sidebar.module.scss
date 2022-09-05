@@ -1,12 +1,18 @@
 .wrapper-sidebar {
+    margin-top: var(--default-header-height);
     width: var(--default-sidebar-width);
     padding: 20px 0px 26px 0px;
-    height: calc(100vh - var(--default-header-height));
+    height: 100vh;
+    height: var(--doc-height);
     overflow-y: scroll;
-    // background-color: rgb(199, 199, 206);
+    overflow-x: hidden;
+
     box-shadow: 2px 0 4px -2px #888;
     -webkit-box-shadow: 2px 0 4px -2px #888;
     -moz-box-shadow: 2px 0 4px -2px #888;
+    // background-color: rgb(199, 199, 206);
+    position: sticky;
+    top: var(--default-header-height);
     .sidebar-container {
         .wrapper-navbar {
             margin-bottom: 18px;
@@ -49,7 +55,9 @@
         width: var(--min-sidebar-width);
         position: fixed;
         left: 0;
-        overflow-y: visible;
+        top: 0;
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
 }
 

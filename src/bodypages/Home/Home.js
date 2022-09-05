@@ -22,25 +22,9 @@ const userFirst = {
     likes: 136811,
     avatar: 'https://raw.githubusercontent.com/kanechan25/tiktok_be/main/src/assets/img_avatar/p1.jpg',
 };
-const usedIndexes = new Set();
-
-function RandomUniqueFromTo(max, min) {
-    try {
-        const newNumber = Math.floor(Math.random() * (max - min + 1) + min);
-        if (usedIndexes.has(newNumber)) {
-            return RandomUniqueFromTo(max, min);
-        } else {
-            usedIndexes.add(newNumber);
-            return newNumber;
-        }
-    } catch (error) {
-        alert('Run out of loaded video, do you want to load more?');
-        return min;
-    }
-}
 
 function Home() {
-    const [idVideo, setIdVideo] = useState(1);
+    // const [idVideo, setIdVideo] = useState(1);
     const [userIsVideoList, setUserIsVideoList] = useState([]);
 
     useEffect(() => {
@@ -51,23 +35,21 @@ function Home() {
         fetchIsVideodUsers();
     }, []);
 
-    const handleScroll = () => {
-        const newNumVideoId = RandomUniqueFromTo(numVideo, 1);
-        setIdVideo(newNumVideoId);
-    };
     return (
-        <div className={cx('wrapper-home')} onClick={handleScroll}>
+        <div className={cx('wrapper-home')} id="home-page">
             <div className="home-container">
-                <div className={cx('video-wrapper')} key={VIDEO_LIST[idVideo - 1].id}>
-                    <Video
-                        data={VIDEO_LIST[idVideo - 1]}
-                        uservideodata={
-                            userIsVideoList[idVideo - 1]
-                                ? userIsVideoList[idVideo - 1]
-                                : userFirst
-                        }
-                    />
-                </div>
+                {VIDEO_LIST.map((video, index) => (
+                    <div className={cx('video-wrapper')} key={video.id}>
+                        <Video
+                            data={video}
+                            uservideodata={
+                                userIsVideoList[video.id - 1]
+                                    ? userIsVideoList[video.id - 1]
+                                    : userFirst
+                            }
+                        />
+                    </div>
+                ))}
             </div>
         </div>
     );

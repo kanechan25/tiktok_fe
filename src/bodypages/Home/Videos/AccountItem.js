@@ -2,7 +2,8 @@ import classNames from 'classnames/bind';
 import styles from './Video.module.scss';
 import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react/headless';
-
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
 import { Wrapper as PopperWrapper } from '../../../components/Popper/Popper';
@@ -32,7 +33,15 @@ function AccountItem({ data }) {
             >
                 <div className={cx('account-items')}>
                     <Link to={`/@${data.nick_name}`} className={cx('wrapper-account-item')}>
-                        <span className={cx('nickname')}>{data.nick_name}</span>
+                        <span className={cx('nickname')}>
+                            {data.nick_name}{' '}
+                            {data.tick && (
+                                <FontAwesomeIcon
+                                    className={cx('check')}
+                                    icon={faCheckCircle}
+                                />
+                            )}
+                        </span>
                         <span className={cx('username')}>{data.full_name}</span>
                     </Link>
                 </div>

@@ -15,6 +15,7 @@ import {
 } from '../../../components/Icons/Icons';
 import * as userServices from '../../../services/userServices';
 import AppContext from '../../../components/Context/AppContext';
+import Footer from './Footer/Footer';
 
 const cx = classNames.bind(styles);
 
@@ -39,6 +40,11 @@ function Sidebar() {
             }
         };
         fetchSuggestedUsers();
+
+        let isDataLogin = localStorage.getItem('loginTiktokData');
+        if (isDataLogin) {
+            setIsLogin(true);
+        }
     }, [myContext.isLogin]);
     return (
         <aside className={cx('wrapper-sidebar')}>
@@ -67,6 +73,7 @@ function Sidebar() {
                 </div>
                 <Suggested label="Suggested Accounts" data={suggestedUsers} />
                 {isLogin ? <Suggested label="Following Accounts" data={followedUsers} /> : ''}
+                <Footer />
             </div>
         </aside>
     );
