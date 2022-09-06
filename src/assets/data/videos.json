@@ -1,0 +1,233 @@
+{
+    "video1": {
+        "id": 1,
+        "like": 4624,
+        "cmt": 62,
+        "share": 89,
+        "desc": "I have finished writing the code 😌 but ... 😭",
+        "hashtag": "#coding #programming #funny",
+        "music": "Pretty Boy - Funny Smile to Cry",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661872847/samples/7116419595845602565_dqmzrj.mp4"
+    },
+    "video2": {
+        "id": 2,
+        "like": 4555,
+        "cmt": 29,
+        "share": 78,
+        "desc": "The huge difference between Junior and Senior. 😎",
+        "hashtag": "#funny #junior #senior",
+        "music": "Bad Day - Daniel Powter",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661872847/samples/7132863685587979525_gckro4.mp4"
+    },
+    "video3": {
+        "id": 3,
+        "like": 6168,
+        "cmt": 60,
+        "share": 29,
+        "desc": "Just only Coder understand context! 😓",
+        "hashtag": "#coding #fixbug",
+        "music": "Beautiful In White - Shane Filan",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661872847/samples/7135853968848096518_xejqg4.mp4"
+    },
+    "video4": {
+        "id": 4,
+        "like": 70,
+        "cmt": 63,
+        "share": 54,
+        "desc": "When your computer goes crazy!! 😱",
+        "hashtag": "#computer #madcoding",
+        "music": "God Shaped Hole - Plumb Neky",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661872847/samples/7137677091109129478_fhzid6.mp4"
+    },
+    "video5": {
+        "id": 5,
+        "like": 2935,
+        "cmt": 59,
+        "share": 21,
+        "desc": "Fixing bugs in production be like ...",
+        "hashtag": "#production #coding #funny",
+        "music": "I Really Like You - Carly Rae Jepsen",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661872847/samples/7136194311368068358_rbj25x.mp4"
+    },
+    "video6": {
+        "id": 6,
+        "like": 464,
+        "cmt": 99,
+        "share": 41,
+        "desc": "Coding Python is brainstormed 😜",
+        "hashtag": "#python #c #java #js",
+        "music": "Love Story Taylor Swift - Taylor Swift",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661872846/samples/7128456285443460357_m4nmco.mp4"
+    },
+    "video7": {
+        "id": 7,
+        "like": 975,
+        "cmt": 67,
+        "share": 88,
+        "desc": "Posture of a programmer 😝",
+        "hashtag": "#lol #programmer #coder",
+        "music": "Rock Star (Original) - Miley Cyrus",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661872846/samples/7132122618706038022_ze4zz4.mp4"
+    },
+    "video8": {
+        "id": 8,
+        "like": 406,
+        "cmt": 12,
+        "share": 93,
+        "desc": "It is hell when StackOverflow is offline cause maintainance!! 🤣",
+        "hashtag": "#stackoverflow #coder",
+        "music": "The Cup Of Life - Ricky Martin",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661872846/samples/7131383184314354949_q77ano.mp4"
+    },
+    "video9": {
+        "id": 9,
+        "like": 78,
+        "cmt": 71,
+        "share": 12,
+        "desc": " 😤 Suddenly rethink at the bugs!!",
+        "hashtag": "#fixbug #coder #9gag",
+        "music": "Why Not Me - Enrique Iglesias",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661872846/samples/7128032282161532166_jqkqhd.mp4"
+    },
+    "video10": {
+        "id": 10,
+        "like": 210,
+        "cmt": 92,
+        "share": 30,
+        "desc": "When you are waiting for a miracle that fix your bug 😢",
+        "hashtag": "#funny #programming #coder",
+        "music": "Tazan and Jane - Toy box",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661872846/samples/7122105308444429573_b4kfoi.mp4"
+    },
+    "video11": {
+        "id": 11,
+        "like": 4981,
+        "cmt": 79,
+        "share": 51,
+        "desc": "Git merge on error be like 😆",
+        "hashtag": "#git #error #bug",
+        "music": "See You Again - Wiz Khalifa , Charlie Puth",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661872845/samples/7121036737010355461_bir95d.mp4"
+    },
+    "video12": {
+        "id": 12,
+        "like": 940,
+        "cmt": 63,
+        "share": 84,
+        "desc": "For a long time since I have been a programmer",
+        "hashtag": "#google #search #funny",
+        "music": "No Matter What - Boyzone",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661872845/samples/6999703381342178562_fsgfnw.mp4"
+    },
+    "video13": {
+        "id": 13,
+        "like": 496,
+        "cmt": 33,
+        "share": 27,
+        "desc": "When you write your first Hello World! 😎",
+        "hashtag": "#helloworld #coding #funny",
+        "music": "I am Sorry - Brenda Lee",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661872845/samples/7115467739942243590_yx3qeb.mp4"
+    },
+    "video14": {
+        "id": 14,
+        "like": 81212,
+        "cmt": 97,
+        "share": 66,
+        "desc": "You after 16 hours with the same error 😤",
+        "hashtag": "#bug #madfixbug #dev",
+        "music": "Last Christmas - Wham",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661872845/samples/7119540971976543493_yfwvqn.mp4"
+    },
+    "video15": {
+        "id": 15,
+        "like": 861,
+        "cmt": 98,
+        "share": 96,
+        "desc": "So cool coding 😌",
+        "hashtag": "#dev #coder # cool",
+        "music": "Please Tell Me Why - Free Style",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661872845/samples/6995607898550193414_avv9ep.mp4"
+    },
+    "video16": {
+        "id": 16,
+        "like": 586,
+        "cmt": 35,
+        "share": 64,
+        "desc": "Everybody thinks I do as a programmer 😌😳",
+        "hashtag": "#social #reality #funny",
+        "music": "New Thang - Redfoo",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661912342/samples/7021602580061048069_mpcvwu.mp4"
+    },
+    "video17": {
+        "id": 17,
+        "like": 1816,
+        "cmt": 73,
+        "share": 17,
+        "desc": "Senior Dev vs Me 🤣",
+        "hashtag": "#seniordev #programmer",
+        "music": "From Sarah With Love - Sarah Connor",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661912339/samples/7117321717281836293_k56t5p.mp4"
+    },
+    "video18": {
+        "id": 18,
+        "like": 558,
+        "cmt": 77,
+        "share": 16,
+        "desc": "When you get hungry is August while you arre coding...",
+        "hashtag": "#cooking #hottest #processor",
+        "music": "Coco Jambo - Mr. President",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661912339/samples/7121764611325480198_cszrcf.mp4"
+    },
+    "video19": {
+        "id": 19,
+        "like": 5583,
+        "cmt": 15,
+        "share": 94,
+        "desc": "Intern on board be like !!",
+        "hashtag": "#intern #coder #funny",
+        "music": "Daddy Cool - Boney M",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661912339/samples/7080216858049137926_ooehb6.mp4"
+    },
+    "video20": {
+        "id": 20,
+        "like": 276,
+        "cmt": 67,
+        "share": 61,
+        "desc": "The right posture of dev is ...",
+        "hashtag": "#funny #dev #posture",
+        "music": "I Have A Dream - Westlife",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661912339/samples/7049492559931936005_wxowza.mp4"
+    },
+    "video21": {
+        "id": 21,
+        "like": 149,
+        "cmt": 51,
+        "share": 30,
+        "desc": "When you clean the keyboard 🤣😝",
+        "hashtag": "#keyboard #cleaning #coder",
+        "music": "Happy - Pharrell Williams",
+        "following": false,
+        "url": "https://res.cloudinary.com/kanechan/video/upload/v1661912339/samples/7118056686820134149_podbrm.mp4"
+    }
+}

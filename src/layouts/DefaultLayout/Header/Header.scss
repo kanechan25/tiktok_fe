@@ -67,8 +67,23 @@
                     margin: 0px 8px;
                 }
                 .message {
+                    position: relative;
+
                     .message-icon {
                         margin-left: 18px;
+                    }
+                    .inbox-number {
+                        position: absolute;
+                        display: flex;
+                        align-items: center;
+                        right: -5px;
+                        top: -7px;
+                        background-color: var(--primaryH);
+                        text-align: center;
+                        padding: 3px 6px 1px 6px;
+                        border-radius: 12px;
+                        line-height: 1;
+                        font-size: 13px;
                     }
                 }
                 .inbox {
@@ -82,7 +97,7 @@
                         align-items: center;
                         right: 0px;
                         top: -4px;
-                        background-color: var(--primary);
+                        background-color: var(--primaryH);
                         text-align: center;
                         padding: 3px 6px 1px 6px;
                         border-radius: 12px;

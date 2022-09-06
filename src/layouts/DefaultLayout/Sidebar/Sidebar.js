@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext, useMemo } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import classNames from 'classnames/bind';
 import config from '../../../config';
 import styles from './Sidebar.module.scss';
@@ -21,7 +21,7 @@ const cx = classNames.bind(styles);
 
 function Sidebar() {
     const myContext = useContext(AppContext);
-    useMemo(() => myContext, [myContext]);
+    // useMemo(() => myContext, [myContext]);
 
     const [suggestedUsers, setSuggestedUsers] = useState([]);
     const [followedUsers, setFollowedUsers] = useState([]);

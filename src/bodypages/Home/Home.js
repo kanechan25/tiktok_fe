@@ -41,6 +41,7 @@ function Home() {
                 {VIDEO_LIST.map((video, index) => (
                     <div className={cx('video-wrapper')} key={video.id}>
                         <Video
+                            forU={true}
                             data={video}
                             uservideodata={
                                 userIsVideoList[video.id - 1]

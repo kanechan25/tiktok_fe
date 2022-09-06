@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
@@ -15,10 +15,12 @@ import Image from '../../../components/Images/Images';
 import Search from '../../../layouts/Components/Search/Search';
 import config from '../../../config/index';
 import Login from '../../../layouts/Components/Login/Login';
-
+import AppContext from 'src/components/Context/AppContext';
 const cx = classNames.bind(styles);
 
 function Header() {
+    const myContext = useContext(AppContext);
+
     const [login, setLogin] = useState(localStorage.getItem('loginTiktokData') ? true : false);
     const [urlAvatar, setUrlAvatar] = useState(() => {
         if (localStorage.getItem('loginTiktokData')) {
@@ -28,6 +30,15 @@ function Header() {
             return '';
         }
     });
+
+    useEffect(() => {
+        setLogin(myContext.isLogin);
+        let isDataLogin = localStorage.getItem('loginTiktokData');
+        if (isDataLogin) {
+            setLogin(true);
+        }
+    }, [myContext.isLogin]);
+
     //handle logic
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
@@ -104,7 +115,7 @@ function Header() {
                                             width={'38px'}
                                             height={'38px'}
                                         />
-                                        <div className={'inbox-number'}>24</div>
+                                        <div className={'inbox-number'}>05</div>
                                     </div>
                                 </Tippy>
                                 <Menu

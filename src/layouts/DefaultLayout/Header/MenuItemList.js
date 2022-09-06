@@ -115,7 +115,7 @@ export const MENU_LOGGEDIN_LIST = [
     {
         icon: <FontAwesomeIcon icon={faGear} />,
         title: 'Settings',
-        to: '/settings',
+        to: '/setting',
     },
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,

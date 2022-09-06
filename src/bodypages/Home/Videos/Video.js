@@ -11,8 +11,9 @@ import useElementOnScreen from 'src/hooks/useElementOnScreen';
 
 const cx = classNames.bind(styles);
 
-function Video({ data, uservideodata }) {
-    const [follow, setFollow] = useState(false);
+function Video({ forU, data, uservideodata }) {
+    // console.log(uservideodata);
+    const [follow, setFollow] = useState(forU ? false : uservideodata.followed);
     const handleFollowing = () => {
         setFollow(!follow);
     };
@@ -33,7 +34,30 @@ function Video({ data, uservideodata }) {
             containerRef.current.pause();
         }
     };
-
+    const [likeNum, setLikeNum] = useState(data.like);
+    const [isLike, setIsLike] = useState(false);
+    const handleCmtInteract = () => {};
+    const handleShareInteract = () => {};
+    const handleLikeInteract = (e) => {
+        const textEle = e.target;
+        if (textEle.tagName === 'path') {
+            const svg = textEle.parentNode;
+            const interactVideo = svg.parentNode;
+            handleLikeAction(interactVideo);
+        }
+        if (textEle.tagName === 'svg') {
+            const interactVideo = textEle.parentNode;
+            handleLikeAction(interactVideo);
+        }
+    };
+    const handleLikeAction = (interactVideo) => {
+        setIsLike(!isLike);
+        if (!isLike) {
+            setLikeNum(data.like + 1);
+        } else {
+            setLikeNum(data.like);
+        }
+    };
     return (
         <div className={cx('wrapper-slice-video')}>
             <div className={cx('video-container')}>
@@ -88,18 +112,42 @@ function Video({ data, uservideodata }) {
                             <source src={data.url} type="video/mp4" />
                         </video>
                         <div className={cx('video-interact')}>
-                            <div className={cx('video-like')}>
-                                <FontAwesomeIcon className={cx('icon')} icon={faHeart} />
-                                <span className={cx('text')}>{nFormatter(data.like, 1)}</span>
+                            <div
+                                className={cx('video-interact-user')}
+                                onClick={handleLikeInteract}
+                            >
+                                <FontAwesomeIcon
+                                    className={cx(
+                                        isLike === false ? 'interact-icon' : 'interact-liked',
+                                    )}
+                                    icon={faHeart}
+                                />
+                                <span className={cx('interact-text')}>
+                                    {nFormatter(likeNum, 1)}
+                                </span>
                             </div>
-                            <div className={cx('video-cmt')}>
-                                <FontAwesomeIcon className={cx('icon')} icon={faCommentDots} />
-                                <span className={cx('text')}>{nFormatter(data.cmt, 1)}</span>
+                            <div
+                                className={cx('video-interact-user')}
+                                onClick={handleCmtInteract}
+                            >
+                                <FontAwesomeIcon
+                                    className={cx('interact-icon')}
+                                    icon={faCommentDots}
+                                />
+                                <span className={cx('interact-text')}>
+                                    {nFormatter(data.cmt, 1)}
+                                </span>
                             </div>
                             <MenuCSS items={MENU_SHARE_LIST} placement="bottom">
-                                <div className={cx('video-share')}>
-                                    <FontAwesomeIcon className={cx('icon')} icon={faShare} />
-                                    <span className={cx('text')}>
+                                <div
+                                    className={cx('video-interact-user')}
+                                    onClick={handleShareInteract}
+                                >
+                                    <FontAwesomeIcon
+                                        className={cx('interact-icon')}
+                                        icon={faShare}
+                                    />
+                                    <span className={cx('interact-text')}>
                                         {nFormatter(data.share, 1)}
                                     </span>
                                 </div>
