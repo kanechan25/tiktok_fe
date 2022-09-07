@@ -12,7 +12,6 @@ import useElementOnScreen from 'src/hooks/useElementOnScreen';
 const cx = classNames.bind(styles);
 
 function Video({ forU, data, uservideodata }) {
-    // console.log(uservideodata);
     const [follow, setFollow] = useState(forU ? false : uservideodata.followed);
     const handleFollowing = () => {
         setFollow(!follow);
@@ -24,16 +23,15 @@ function Video({ forU, data, uservideodata }) {
     });
     const handleOnFullVisible = () => {
         if (containerRef.current) {
-            // console.log(`Video ${data.id} FULL IN VIEW`, containerRef.current);
             containerRef.current.play();
         }
     };
     const handleOnInvisible = () => {
         if (containerRef.current) {
-            // console.log(`Video ${data.id} INVISIBLE`, containerRef.current);
             containerRef.current.pause();
         }
     };
+
     const [likeNum, setLikeNum] = useState(data.like);
     const [isLike, setIsLike] = useState(false);
     const handleCmtInteract = () => {};
@@ -41,16 +39,16 @@ function Video({ forU, data, uservideodata }) {
     const handleLikeInteract = (e) => {
         const textEle = e.target;
         if (textEle.tagName === 'path') {
-            const svg = textEle.parentNode;
-            const interactVideo = svg.parentNode;
-            handleLikeAction(interactVideo);
+            // const svg = textEle.parentNode;
+            // const interactVideo = svg.parentNode;
+            handleLikeAction();
         }
         if (textEle.tagName === 'svg') {
-            const interactVideo = textEle.parentNode;
-            handleLikeAction(interactVideo);
+            // const interactVideo = textEle.parentNode;
+            handleLikeAction();
         }
     };
-    const handleLikeAction = (interactVideo) => {
+    const handleLikeAction = () => {
         setIsLike(!isLike);
         if (!isLike) {
             setLikeNum(data.like + 1);
@@ -99,15 +97,7 @@ function Video({ forU, data, uservideodata }) {
                         </div>
                     </div>
                     <div className={cx('video-body')}>
-                        <video
-                            className={cx('video')}
-                            ref={containerRef}
-                            width="300"
-                            height="530"
-                            controls
-                            loop
-                            muted
-                        >
+                        <video className={cx('video')} ref={containerRef} controls loop muted>
                             {isVisible ? handleOnFullVisible() : handleOnInvisible()}
                             <source src={data.url} type="video/mp4" />
                         </video>

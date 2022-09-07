@@ -24,6 +24,9 @@
         .center-content {
             display: flex;
             justify-content: center;
+            .search-btn-mini {
+                display: none;
+            }
         }
         .right-content {
             .right-btn {
@@ -135,8 +138,20 @@
 }
 
 @media (max-width: 768px) {
-    .search-container {
-        display: none !important;
+    .wrapper-header {
+        .inner {
+            .center-content {
+                .search-btn-mini {
+                    display: block;
+                    background-color: transparent;
+                    cursor: pointer;
+                    .search-icon {
+                        color: var(--color-black);
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
     }
 }
 @media (max-width: 576px) {
@@ -152,8 +167,20 @@
             }
             .right-content {
                 .right-btn {
-                    width: 100px;
+                    width: 90px;
                     height: 35px;
+                }
+                .upload {
+                    .upload-btn {
+                        .upload-plus-icon {
+                            margin: 0px 6px 0px 4px;
+                        }
+                    }
+                }
+                .non-login {
+                    .see-more {
+                        padding: 6px 12px 6px 12px;
+                    }
                 }
             }
         }

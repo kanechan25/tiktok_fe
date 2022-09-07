@@ -17,6 +17,7 @@ import config from '../../../config/index';
 import Login from '../../../layouts/Components/Login/Login';
 import AppContext from 'src/components/Context/AppContext';
 import Inbox from 'src/components/Inbox/Inbox';
+import { SearchIcon } from '../../../components/Icons/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -97,6 +98,9 @@ function Header() {
                     </div>
                     <div className={cx('center-content col-lg-4 col-md-5 col-1')}>
                         <Search />
+                        <button className={cx('search-btn-mini')}>
+                            <SearchIcon className={'search-icon'} />
+                        </button>
                     </div>
                     <div className={cx('right-content col-lg-4 col-md-5 col-7')}>
                         {login ? (

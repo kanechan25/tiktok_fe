@@ -78,8 +78,11 @@
             }
             .video-body {
                 display: flex;
+                position: relative;
                 .video {
                     background-color: #555;
+                    width: 300px;
+                    height: 530px;
                 }
                 video::-webkit-media-controls-fullscreen-button {
                     display: none !important;
@@ -218,4 +221,39 @@
 }
 
 @media (max-width: 576px) {
+    .wrapper-slice-video {
+        .video-container {
+            .video-main {
+                width: 280px;
+
+                .video-body {
+                    position: relative;
+                    .video {
+                        width: 274px;
+                        height: 484px;
+                        z-index: 99;
+                    }
+                    .video-interact {
+                        position: absolute;
+                        z-index: 100;
+                        right: 35px;
+                        bottom: 82px;
+                        .video-interact-user {
+                            .interact-icon {
+                                color: var(--color-white);
+                                background-color: rgba(0, 0, 0, 0.2);
+                                &:hover {
+                                    background-color: rgba(0, 0, 0, 0.4);
+                                    border-radius: 50%;
+                                }
+                            }
+                            .interact-text {
+                                color: var(--color-white);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

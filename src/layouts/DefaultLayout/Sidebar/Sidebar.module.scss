@@ -5,8 +5,8 @@
     height: 100vh;
     height: var(--doc-height);
     overflow-y: scroll;
-    overflow-x: hidden;
-
+    overflow-x: visible;
+    background-color: var(--color-bg);
     box-shadow: 2px 0 4px -2px #888;
     -webkit-box-shadow: 2px 0 4px -2px #888;
     -moz-box-shadow: 2px 0 4px -2px #888;

@@ -9,3 +9,8 @@
         font-weight: 600;
     }
 }
+@media (max-width: 576px) {
+    .login-btn {
+        margin-left: 6px;
+    }
+}
