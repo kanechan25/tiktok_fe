@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
@@ -10,12 +10,14 @@ import { MENU_NONLOGIN_LIST, MENU_LOGGEDIN_LIST } from './MenuItemList';
 
 import images from '../../../assets/img/images';
 import Menu from '../../../components/Popper/Menu/Menu';
-import { InboxIcon, MessageIcon } from '../../../components/Icons/Icons';
+import { InboxIcon, InboxIconActive, MessageIcon } from '../../../components/Icons/Icons';
 import Image from '../../../components/Images/Images';
 import Search from '../../../layouts/Components/Search/Search';
 import config from '../../../config/index';
 import Login from '../../../layouts/Components/Login/Login';
 import AppContext from 'src/components/Context/AppContext';
+import Inbox from 'src/components/Inbox/Inbox';
+
 const cx = classNames.bind(styles);
 
 function Header() {
@@ -30,6 +32,21 @@ function Header() {
             return '';
         }
     });
+    const [inbox, setInbox] = useState(false);
+    const inboxRef = useRef();
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (inboxRef.current && !inboxRef.current.contains(event.target)) {
+                setInbox(false);
+            }
+        }
+        // Bind the event listener
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            // Unbind the event listener on clean up
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [inboxRef]);
 
     useEffect(() => {
         setLogin(myContext.isLogin);
@@ -40,10 +57,13 @@ function Header() {
     }, [myContext.isLogin]);
 
     //handle logic
+    const handleOpenInbox = () => {
+        setInbox(!inbox);
+    };
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
             case 'language':
-                alert(`You clicked on change language to ${menuItem.title}`);
+                console.log(`You have just clicked on change language to ${menuItem.title}`);
                 break;
             default:
         }
@@ -59,6 +79,7 @@ function Header() {
         localStorage.removeItem('userTiktokData');
         setLogin(!isLogout);
     };
+
     return (
         <header className={cx('wrapper-header')}>
             <div className={cx('container-header container')}>
@@ -108,16 +129,31 @@ function Header() {
                                         />
                                     </a>
                                 </Tippy>
-                                <Tippy content={'Inbox'}>
-                                    <div className={cx('inbox')}>
+
+                                <div className={cx('inbox')} onClick={handleOpenInbox}>
+                                    {inbox ? (
+                                        <InboxIconActive
+                                            className={'inbox-icon right-item'}
+                                            width={'38px'}
+                                            height={'38px'}
+                                        />
+                                    ) : (
                                         <InboxIcon
                                             className={'inbox-icon right-item'}
                                             width={'38px'}
                                             height={'38px'}
                                         />
-                                        <div className={'inbox-number'}>05</div>
-                                    </div>
-                                </Tippy>
+                                    )}
+                                    <div className={'inbox-number'}>18</div>
+                                    {inbox ? (
+                                        <div className={'inbox-showing'} ref={inboxRef}>
+                                            <Inbox />
+                                        </div>
+                                    ) : (
+                                        ''
+                                    )}
+                                </div>
+
                                 <Menu
                                     items={MENU_LOGGEDIN_LIST}
                                     onChange={handleMenuChange}

@@ -103,6 +103,10 @@
                         border-radius: 12px;
                         line-height: 1;
                         font-size: 13px;
+                        user-select: none;
+                    }
+                    .inbox-showing {
+                        display: block;
                     }
                 }
                 .user-avatar {
@@ -113,6 +117,7 @@
                     -webkit-background-size: cover;
                     background-size: cover;
                     border-radius: 50%;
+                    user-select: none;
                     cursor: pointer;
                 }
                 .wrapper-logout {
@@ -132,5 +137,25 @@
 @media (max-width: 768px) {
     .search-container {
         display: none !important;
+    }
+}
+@media (max-width: 576px) {
+    .wrapper-header {
+        .inner {
+            width: 100vw;
+            .left-content {
+                .logo {
+                    .logo-img {
+                        width: 80px;
+                    }
+                }
+            }
+            .right-content {
+                .right-btn {
+                    width: 100px;
+                    height: 35px;
+                }
+            }
+        }
     }
 }

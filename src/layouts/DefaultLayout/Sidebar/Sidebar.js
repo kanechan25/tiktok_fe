@@ -4,7 +4,7 @@ import config from '../../../config';
 import styles from './Sidebar.module.scss';
 import Menu from './Menu/Menu';
 import MenuItem from './Menu/MenuItem';
-import Suggested from '../../../components/Suggested/Suggested';
+import Suggested from 'src/components/Suggested/Suggested';
 import {
     HomeIcon,
     HomeIconActive,
