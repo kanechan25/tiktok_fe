@@ -12,18 +12,17 @@ const cx = classNames.bind(styles);
 // const numVideo = FOLLOWING_VIDEO_LIST.length;
 const userFirst = {
     id: 1,
-    first_name: 'Kane',
-    last_name: 'Chan',
-    full_name: 'Kane Chan',
-    nick_name: 'kanechan0205',
-    bio: 'Full-stack web dev',
+    first_name: 'Khoa',
+    last_name: 'Tran',
+    full_name: 'Khoa Tran',
+    nick_name: 'khoatran0205',
     tick: true,
     is_video: true,
     followed: true,
-    followings: 105,
-    followers: 2541254,
+    followings: 73,
+    followers: 2319683,
     likes: 201475,
-    avatar: 'https://raw.githubusercontent.com/kanechan25/tiktok_be/main/src/assets/img_avatar/p100.jpg',
+    avatar: 'https://raw.githubusercontent.com/kanechan25/tiktok_be/main/src/assets/img_avatar/p1.jpg',
 };
 
 function Following() {

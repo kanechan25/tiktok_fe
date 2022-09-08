@@ -13,13 +13,12 @@ const userFirst = {
     last_name: 'Tran',
     full_name: 'Khoa Tran',
     nick_name: 'khoatran0205',
-    bio: 'Full-stack web dev',
     tick: true,
     is_video: true,
     followed: true,
     followings: 73,
-    followers: 1319683,
-    likes: 136811,
+    followers: 2319683,
+    likes: 201475,
     avatar: 'https://raw.githubusercontent.com/kanechan25/tiktok_be/main/src/assets/img_avatar/p1.jpg',
 };
 
