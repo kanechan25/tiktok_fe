@@ -27,6 +27,9 @@
             .search-btn-mini {
                 display: none;
             }
+            .search-input-mini {
+                display: none;
+            }
         }
         .right-content {
             .right-btn {
@@ -136,18 +139,30 @@
         }
     }
 }
-
+$transNum: calc(0.5 * (100vw - 300px) + 70px);
 @media (max-width: 768px) {
     .wrapper-header {
         .inner {
             .center-content {
+                position: relative;
                 .search-btn-mini {
                     display: block;
-                    background-color: transparent;
                     cursor: pointer;
+                    background-color: transparent;
+                    margin-left: 20px;
                     .search-icon {
                         color: var(--color-black);
                         background-color: transparent;
+                    }
+                }
+                .search-input-mini {
+                    display: block;
+                    position: absolute;
+                    top: 42px;
+                    background-color: var(--color-bg);
+                    border-radius: 92px;
+                    .search-container {
+                        display: flex !important;
                     }
                 }
             }
@@ -165,6 +180,11 @@
                     }
                 }
             }
+            .center-content {
+                .search-input-mini {
+                    transform: translateX($transNum);
+                }
+            }
             .right-content {
                 .right-btn {
                     width: 90px;
@@ -180,6 +200,19 @@
                 .non-login {
                     .see-more {
                         padding: 6px 12px 6px 12px;
+                    }
+                }
+                .already-login {
+                    .right-item {
+                        margin: 0px 2px;
+                    }
+                    .message {
+                        .message-icon {
+                            margin-left: 12px;
+                        }
+                    }
+                    .user-avatar {
+                        margin-left: 6px;
                     }
                 }
             }

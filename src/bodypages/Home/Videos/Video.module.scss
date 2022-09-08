@@ -143,32 +143,30 @@
             }
         }
         .following-status {
-            .follow {
-                position: sticky;
-                right: 0;
-                width: 110px;
-                height: 35px;
-                border: 1px solid rgba(22, 24, 35, 0.2);
-                border-radius: 5px;
-                font-weight: 600;
-                outline: none;
-                margin-left: 20px;
-                color: var(--color-white);
-                background-color: var(--primaryH);
+            .following-btn {
+                .follow,
+                .following {
+                    position: sticky;
+                    right: 0;
+                    width: 110px;
+                    height: 35px;
+                    border: 1px solid rgba(22, 24, 35, 0.2);
+                    border-radius: 5px;
+                    font-weight: 600;
+                    outline: none;
+                    margin-left: 20px;
+                }
+                .follow {
+                    color: var(--color-white);
+                    background-color: var(--primaryH);
+                }
+                .following {
+                    color: var(--primaryH);
+                    background-color: transparent;
+                }
             }
-            .following {
-                position: sticky;
-                right: 0;
-                width: 110px;
-                height: 35px;
-                border: 1px solid rgba(22, 24, 35, 0.2);
-                border-radius: 5px;
-                font-weight: 600;
-                outline: none;
-                margin-left: 20px;
-
-                color: var(--primaryH);
-                background-color: transparent;
+            .following-btn-mini {
+                display: none;
             }
         }
     }
@@ -225,7 +223,6 @@
         .video-container {
             .video-main {
                 width: 280px;
-
                 .video-body {
                     position: relative;
                     .video {
@@ -236,7 +233,7 @@
                     .video-interact {
                         position: absolute;
                         z-index: 100;
-                        right: 35px;
+                        right: 10px;
                         bottom: 82px;
                         .video-interact-user {
                             .interact-icon {
@@ -251,6 +248,40 @@
                                 color: var(--color-white);
                             }
                         }
+                    }
+                }
+            }
+            .following-status {
+                position: absolute;
+                right: 10px;
+                .following-btn {
+                    display: none;
+                }
+                .following-btn-mini {
+                    display: block;
+                    .icon-fl {
+                        width: 20px;
+                        height: 20px;
+                    }
+                    .follow,
+                    .following {
+                        position: sticky;
+                        right: 0;
+                        width: 35px;
+                        height: 30px;
+                        border: 1px solid rgba(22, 24, 35, 0.2);
+                        border-radius: 5px;
+                        font-weight: 600;
+                        outline: none;
+                        margin-left: 20px;
+                    }
+                    .follow {
+                        color: var(--color-white);
+                        background-color: var(--primaryB);
+                    }
+                    .following {
+                        color: var(--primaryH);
+                        background-color: transparent;
                     }
                 }
             }

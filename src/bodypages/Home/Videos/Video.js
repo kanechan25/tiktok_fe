@@ -8,6 +8,8 @@ import { MENU_SHARE_LIST } from './ShareItemList';
 import MenuCSS from '../../../components/Popper/MenuCSS/MenuCSS';
 import { useState } from 'react';
 import useElementOnScreen from 'src/hooks/useElementOnScreen';
+import nofollow from 'src/assets/img/nofollow.png';
+import following from 'src/assets/img/following.png';
 
 const cx = classNames.bind(styles);
 
@@ -146,11 +148,24 @@ function Video({ forU, data, uservideodata }) {
                     </div>
                 </div>
                 <div className={cx('following-status')} onClick={handleFollowing}>
-                    {follow === false ? (
-                        <button className={cx('follow')}>Follow</button>
-                    ) : (
-                        <button className={cx('following')}>Following</button>
-                    )}
+                    <div className={cx('following-btn')}>
+                        {follow === false ? (
+                            <button className={cx('follow')}>Follow</button>
+                        ) : (
+                            <button className={cx('following')}>Following</button>
+                        )}
+                    </div>
+                    <div className={cx('following-btn-mini')}>
+                        {follow === false ? (
+                            <button className={cx('follow')}>
+                                <img className={cx('icon-fl')} src={nofollow} alt="FL" />
+                            </button>
+                        ) : (
+                            <button className={cx('following')}>
+                                <img className={cx('icon-fl')} src={following} alt="FD" />
+                            </button>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

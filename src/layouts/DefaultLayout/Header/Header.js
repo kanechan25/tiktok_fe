@@ -34,6 +34,7 @@ function Header() {
         }
     });
     const [inbox, setInbox] = useState(false);
+    const [search, setSearch] = useState(false);
     const inboxRef = useRef();
     useEffect(() => {
         function handleClickOutside(event) {
@@ -61,6 +62,9 @@ function Header() {
     const handleOpenInbox = () => {
         setInbox(!inbox);
     };
+    const handleOpenSearch = () => {
+        setSearch(!search);
+    };
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
             case 'language':
@@ -85,7 +89,7 @@ function Header() {
         <header className={cx('wrapper-header')}>
             <div className={cx('container-header container')}>
                 <div className={cx('inner row')}>
-                    <div className={cx('left-content col-lg-4 col-md-2 col-4')}>
+                    <div className={cx('left-content col-lg-4 col-md-2 col-3')}>
                         <div className={cx('logo')}>
                             <Link to={config.routes.home} className={cx('logo-link')}>
                                 <img
@@ -98,16 +102,25 @@ function Header() {
                     </div>
                     <div className={cx('center-content col-lg-4 col-md-5 col-1')}>
                         <Search />
-                        <button className={cx('search-btn-mini')}>
+                        <button
+                            className={cx('search-btn-mini')}
+                            onClick={handleOpenSearch}
+                            id="search-btn-mini"
+                        >
                             <SearchIcon className={'search-icon'} />
                         </button>
+                        {search && (
+                            <div className={cx('search-input-mini')} id="search-input-mini">
+                                <Search />
+                            </div>
+                        )}
                     </div>
-                    <div className={cx('right-content col-lg-4 col-md-5 col-7')}>
+                    <div className={cx('right-content col-lg-4 col-md-5 col-8')}>
                         {login ? (
                             <div className={cx('already-login')}>
                                 <a
                                     href={config.routes.upload}
-                                    target={'__blank'}
+                                    // target={'__blank'}
                                     className={cx('upload')}
                                 >
                                     <button
@@ -122,8 +135,8 @@ function Header() {
                                 </a>
                                 <Tippy content={'Message'}>
                                     <a
-                                        href="/message"
-                                        target={'__blank'}
+                                        href={config.routes.message}
+                                        // target={'__blank'}
                                         className={cx('message')}
                                     >
                                         <MessageIcon
