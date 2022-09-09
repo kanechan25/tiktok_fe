@@ -171,6 +171,9 @@ $transNum: calc(0.5 * (100vw - 300px) + 70px);
 }
 @media (max-width: 576px) {
     .wrapper-header {
+        .container-header.container {
+            margin-left: -3px;
+        }
         .inner {
             width: 100vw;
             .left-content {
