@@ -1,0 +1,308 @@
+.wrapper-slice-video {
+    .video-container {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: flex-start;
+        .video-avatar {
+            margin-left: 10px;
+            .avatar {
+                height: 56px;
+                width: 56px;
+                border-radius: 50%;
+            }
+        }
+        .video-main {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-left: 12px;
+            width: 380px;
+            .video-header {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                height: 124px;
+                .header-info {
+                    display: flex;
+                    width: 100%;
+                    .header-info-user {
+                        width: 100%;
+                        .header-info-acc {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 100%;
+                            .header-info-data {
+                                .avatar {
+                                    display: none;
+                                    height: 40px;
+                                    width: 40px;
+                                    border-radius: 50%;
+                                    margin-right: 10px;
+                                }
+                                .wrapper-account-item {
+                                    .nickname {
+                                        font-family: 'SofiaPro', sans-serif;
+                                        font-weight: 700;
+                                        font-size: 18px;
+                                        margin-right: 10px;
+                                    }
+                                    .username {
+                                        font-family: 'ProximaNova', sans-serif;
+                                        font-size: 14px;
+                                    }
+                                    .check {
+                                        margin-left: 2px;
+                                        color: rgb(32, 213, 236);
+                                    }
+                                }
+                            }
+                        }
+                        .header-info-desc {
+                            display: flex;
+                            flex-direction: column;
+                            .header-info-hashtag {
+                                font-family: 'ProximaNova', sans-serif;
+                                font-weight: 600;
+                            }
+                        }
+                        .header-info-music {
+                            font-size: 14px;
+                            margin-top: 2px;
+                            .music-icon {
+                                margin-right: 6px;
+                            }
+                        }
+                    }
+                }
+            }
+            .video-body {
+                display: flex;
+                position: relative;
+                .video {
+                    background-color: #555;
+                    width: 300px;
+                    height: 530px;
+                }
+                video::-webkit-media-controls-fullscreen-button {
+                    display: none !important;
+                }
+                video::-webkit-media-controls-current-time-display {
+                    display: none !important;
+                }
+                video::-webkit-media-controls-time-remaining-display {
+                    display: none !important;
+                }
+                // video::-webkit-media-controls-timeline {
+                //     display: none !important;
+                // }
+                video::-webkit-media-controls-rewind-button {
+                    display: none !important;
+                }
+                video::-webkit-media-controls-toggle-closed-captions-button {
+                    display: none !important;
+                }
+                .video-interact {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items: center;
+                    .video-interact-user {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        margin: 16px 0px 0px 20px;
+                        cursor: pointer;
+                        .interact-icon {
+                            font-size: 18px;
+                            padding: 8px;
+                            background-color: rgba(22, 24, 35, 0.08);
+                            border-radius: 50%;
+                            &:hover {
+                                background-color: rgba(22, 24, 35, 0.13);
+                                border-radius: 50%;
+                            }
+                        }
+                        .interact-text {
+                            font-size: 14px;
+                            text-align: center;
+                        }
+                        .interact-liked {
+                            font-size: 18px;
+                            color: var(--primaryH);
+                            padding: 8px;
+                            background-color: rgba(22, 24, 35, 0.08);
+                            border-radius: 50%;
+                            &:hover {
+                                background-color: rgba(22, 24, 35, 0.13);
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .following-status {
+            .following-btn {
+                .follow,
+                .following {
+                    position: sticky;
+                    right: 0;
+                    width: 110px;
+                    height: 35px;
+                    border: 1px solid rgba(22, 24, 35, 0.2);
+                    border-radius: 5px;
+                    font-weight: 600;
+                    outline: none;
+                    margin-left: 14px;
+                }
+                .follow {
+                    color: var(--color-white);
+                    background-color: var(--primaryH);
+                }
+                .following {
+                    color: var(--primaryH);
+                    background-color: transparent;
+                }
+            }
+            .following-btn-mini {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .wrapper-slice-video {
+        .video-container {
+            .video-avatar {
+                display: none;
+            }
+            .video-main {
+                width: 320px;
+                .video-header {
+                    height: 142px;
+                    .header-info {
+                        .header-info-user {
+                            .header-info-acc {
+                                .header-info-data {
+                                    display: flex;
+                                    .avatar {
+                                        display: block;
+                                    }
+                                    .wrapper-account-item {
+                                        display: flex;
+                                        flex-direction: column;
+                                        .nickname {
+                                            font-size: 16px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .following-status {
+                position: absolute;
+                right: 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper-slice-video {
+        .video-container {
+            .video-main {
+                width: 300px;
+                .video-header {
+                    .header-info {
+                        .header-info-user {
+                            .header-info-acc {
+                                .header-info-data {
+                                    .wrapper-account-item {
+                                        .nickname {
+                                            font-size: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .wrapper-slice-video {
+        .video-container {
+            .video-main {
+                width: 280px;
+                .video-body {
+                    position: relative;
+                    .video {
+                        width: 274px;
+                        height: 484px;
+                        z-index: 99;
+                    }
+                    .video-interact {
+                        position: absolute;
+                        z-index: 100;
+                        right: 10px;
+                        bottom: 82px;
+                        .video-interact-user {
+                            .interact-icon {
+                                color: var(--color-white);
+                                background-color: rgba(0, 0, 0, 0.2);
+                                &:hover {
+                                    background-color: rgba(0, 0, 0, 0.4);
+                                    border-radius: 50%;
+                                }
+                            }
+                            .interact-text {
+                                color: var(--color-white);
+                            }
+                        }
+                    }
+                }
+            }
+            .following-status {
+                position: absolute;
+                right: 22px;
+                .following-btn {
+                    display: none;
+                }
+                .following-btn-mini {
+                    display: block;
+                    .icon-fl {
+                        width: 20px;
+                        height: 20px;
+                    }
+                    .follow,
+                    .following {
+                        position: sticky;
+                        right: 0;
+                        width: 35px;
+                        height: 30px;
+                        border: 1px solid rgba(22, 24, 35, 0.2);
+                        border-radius: 5px;
+                        font-weight: 600;
+                        outline: none;
+                        margin-left: 20px;
+                    }
+                    .follow {
+                        color: var(--color-white);
+                        background-color: var(--primaryB);
+                    }
+                    .following {
+                        color: var(--primaryH);
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}

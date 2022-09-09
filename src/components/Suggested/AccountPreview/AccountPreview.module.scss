@@ -1,0 +1,69 @@
+.wrapper-account-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 16px;
+    cursor: pointer;
+    min-width: 250px;
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+    .header-prv {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        button {
+            background-color: var(--primaryO);
+            font-family: 'SofiaPro', sans-serif;
+            color: var(--color-white);
+
+            width: 100px;
+            height: 32px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(22, 24, 35, 0.2);
+        }
+    }
+    .info-prv {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 8px 0px;
+        .name {
+            font-family: 'SofiaPro', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0px;
+            line-height: 1.5;
+            .check {
+                margin-left: 6px;
+                color: rgb(32, 213, 236);
+            }
+        }
+
+        .username {
+            font-size: 1.3rem;
+            color: rgba(22, 24, 35, 0.5);
+        }
+    }
+    .about-prv {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .about-spec {
+            margin: 4px 6px;
+            .text-about {
+                margin-left: 4px;
+            }
+        }
+    }
+}

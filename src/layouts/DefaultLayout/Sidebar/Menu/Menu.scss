@@ -1,0 +1,39 @@
+.menu-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 8px 8px 8px 8px;
+    border-radius: 4px;
+    transition: background-color ease-in-out 200ms;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+    &.active {
+        background-color: rgba(22, 24, 35, 0.03);
+        color: var(--primaryH);
+        .icon {
+            display: none;
+        }
+        .active-icon {
+            display: flex;
+        }
+    }
+    .active-icon {
+        display: none;
+    }
+    .title {
+        margin-left: 10px;
+        margin-top: 4px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-item {
+        justify-content: center;
+
+        .title {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,221 @@
+.wrapper-header {
+    z-index: 9999;
+    width: 100%;
+    box-shadow: 0px 1px 1px rgba($color: #000000, $alpha: 0.15);
+    background-color: var(--color-bg);
+    position: fixed;
+    top: 0;
+    .inner {
+        height: var(--default-header-height);
+        width: var(--default-layout-width);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // background-color: rgba(6, 150, 215, 0.2);
+        .left-content {
+            display: flex;
+            justify-content: flex-start;
+            .logo {
+                .logo-img {
+                    width: 110px;
+                }
+            }
+        }
+        .center-content {
+            display: flex;
+            justify-content: center;
+            .search-btn-mini {
+                display: none;
+            }
+            .search-input-mini {
+                display: none;
+            }
+        }
+        .right-content {
+            .right-btn {
+                width: 116px;
+                height: 40px;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid rgba(22, 24, 35, 0.2);
+            }
+            .upload {
+                color: var(--color-text);
+                .upload-btn {
+                    .upload-plus-icon {
+                        height: 1.9rem;
+                        margin: 0px 10px 0px 4px;
+                    }
+                    .upload-btn-text {
+                        font-weight: 600;
+                    }
+                }
+            }
+            .non-login {
+                display: flex;
+                justify-content: right;
+                align-items: center;
+                .see-more {
+                    padding: 6px 18px;
+                    background: transparent;
+                    .see-more-icon {
+                        height: 24px;
+                    }
+                }
+            }
+            .already-login {
+                display: flex;
+                justify-content: right;
+                align-items: center;
+                .right-item {
+                    margin: 0px 8px;
+                }
+                .message {
+                    position: relative;
+
+                    .message-icon {
+                        margin-left: 18px;
+                    }
+                    .inbox-number {
+                        position: absolute;
+                        display: flex;
+                        align-items: center;
+                        right: -5px;
+                        top: -7px;
+                        background-color: var(--primaryH);
+                        text-align: center;
+                        padding: 3px 6px 1px 6px;
+                        border-radius: 12px;
+                        line-height: 1;
+                        font-size: 13px;
+                    }
+                }
+                .inbox {
+                    position: relative;
+                    .inbox-icon {
+                        cursor: pointer;
+                    }
+                    .inbox-number {
+                        position: absolute;
+                        display: flex;
+                        align-items: center;
+                        right: 0px;
+                        top: -4px;
+                        background-color: var(--primaryH);
+                        text-align: center;
+                        padding: 3px 6px 1px 6px;
+                        border-radius: 12px;
+                        line-height: 1;
+                        font-size: 13px;
+                        user-select: none;
+                    }
+                    .inbox-showing {
+                        display: block;
+                    }
+                }
+                .user-avatar {
+                    margin-left: 10px;
+                    width: 34px;
+                    height: 34px;
+                    background: center no-repeat;
+                    -webkit-background-size: cover;
+                    background-size: cover;
+                    border-radius: 50%;
+                    user-select: none;
+                    cursor: pointer;
+                }
+                .wrapper-logout {
+                    display: flex;
+                    align-items: center;
+                    margin: 3px 0px 0px 8px;
+                    .logout-btn {
+                        font-size: 20px;
+                        background: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+$transNum: calc(0.5 * (100vw - 300px) + 70px);
+@media (max-width: 768px) {
+    .wrapper-header {
+        .inner {
+            .center-content {
+                position: relative;
+                .search-btn-mini {
+                    display: block;
+                    cursor: pointer;
+                    background-color: transparent;
+                    margin-left: 20px;
+                    .search-icon {
+                        color: var(--color-black);
+                        background-color: transparent;
+                    }
+                }
+                .search-input-mini {
+                    display: block;
+                    position: absolute;
+                    top: 42px;
+                    background-color: var(--color-bg);
+                    border-radius: 92px;
+                    .search-container {
+                        display: flex !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 576px) {
+    .wrapper-header {
+        .inner {
+            width: 100vw;
+            .left-content {
+                .logo {
+                    .logo-img {
+                        width: 80px;
+                    }
+                }
+            }
+            .center-content {
+                .search-input-mini {
+                    transform: translateX($transNum);
+                }
+            }
+            .right-content {
+                .right-btn {
+                    width: 90px;
+                    height: 35px;
+                }
+                .upload {
+                    .upload-btn {
+                        .upload-plus-icon {
+                            margin: 0px 6px 0px 4px;
+                        }
+                    }
+                }
+                .non-login {
+                    .see-more {
+                        padding: 6px 12px 6px 12px;
+                    }
+                }
+                .already-login {
+                    .right-item {
+                        margin: 0px 2px;
+                    }
+                    .message {
+                        .message-icon {
+                            margin-left: 12px;
+                        }
+                    }
+                    .user-avatar {
+                        margin-left: 6px;
+                    }
+                }
+            }
+        }
+    }
+}

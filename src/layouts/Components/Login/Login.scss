@@ -1,0 +1,16 @@
+.login-btn {
+    margin-left: 20px;
+    background-color: var(--primaryO);
+    &:hover {
+        background-color: var(--primaryH);
+    }
+    .login-btn-text {
+        color: var(--color-white);
+        font-weight: 600;
+    }
+}
+@media (max-width: 576px) {
+    .login-btn {
+        margin-left: 6px;
+    }
+}

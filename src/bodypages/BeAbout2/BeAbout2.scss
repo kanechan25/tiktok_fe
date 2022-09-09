@@ -1,0 +1,36 @@
+.wrapper-be-about {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .header-text {
+        display: flex;
+        justify-content: center;
+        color: var(--primaryO);
+        font-size: 18px;
+        text-align: center;
+    }
+    .btn-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        .feature-btn {
+            width: 200px;
+            height: 40px;
+            background-color: transparent;
+            border: 0.5px solid rgba(0, 0, 0, 0.4);
+            .feature-btn-text {
+                font-size: 20px;
+                font-weight: 600;
+                color: var(--primaryO);
+            }
+        }
+        .feature-btn:hover {
+            background-color: var(--primaryO);
+            border: 0.5px solid rgba(0, 0, 0, 0.8);
+            .feature-btn-text {
+                color: var(--color-white);
+            }
+        }
+    }
+}

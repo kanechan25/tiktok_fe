@@ -1,0 +1,78 @@
+//CSS AccountItem.js
+.wrapper-suggest {
+    border-top: 0.5px solid rgba(0, 0, 0, 0.07);
+    padding-bottom: 10px;
+    .label {
+        margin-left: 10px;
+        margin-top: 10px;
+        font-weight: 550;
+    }
+    .more {
+        margin-left: 8px;
+        font-weight: 550;
+        cursor: pointer;
+        color: var(--primaryH);
+    }
+}
+
+.wrapper-account-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 16px;
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+    .avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        margin-left: 12px;
+        .name {
+            font-family: 'SofiaPro', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0px;
+            line-height: 1;
+            .check {
+                margin-left: 6px;
+                color: rgb(32, 213, 236);
+            }
+        }
+
+        .username {
+            font-size: 1.3rem;
+            color: rgba(22, 24, 35, 0.5);
+        }
+    }
+}
+
+// CSS for AccountPreview
+.account-detail-wrapper {
+    position: absolute;
+}
+
+@media (max-width: 768px) {
+    .wrapper-suggest {
+        .label {
+            display: none;
+        }
+        .more {
+            margin-top: 10px;
+            font-size: 13px;
+            padding-bottom: 18px;
+        }
+    }
+    .wrapper-account-item {
+        .info {
+            display: none;
+        }
+    }
+}

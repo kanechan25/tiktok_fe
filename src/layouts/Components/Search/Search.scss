@@ -1,0 +1,100 @@
+.search-result {
+    width: 352px;
+    .search-title {
+        font-family: var(--font-family);
+        font-weight: 600;
+        padding-left: 18px;
+    }
+}
+
+.search-container {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    flex-direction: row;
+    align-items: center;
+    -webkit-box-align: center;
+    width: 300px;
+    margin: 0;
+    padding: 12px 20px;
+    background: rgba(22, 24, 35, 0.06);
+    border-radius: 92px;
+    border: 1px solid transparent;
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+    .search-input {
+        background: transparent;
+        font-weight: 400;
+        font-size: 16px;
+        font-family: var(--font-family);
+        line-height: 22px;
+        padding: 0;
+        width: 292px;
+        caret-color: rgba(254, 44, 85, 1);
+        &:focus ~ .search-container {
+            border: 0.5px solid #0696d7;
+            border-color: #0696d7;
+            box-shadow: #5f60ff 0 0 0 1px inset;
+        }
+    }
+    .search-input:not(:placeholder-shown) ~ .search-btn {
+        background-color: rgba(22, 24, 35, 0.1);
+        .search-icon {
+            color: rgba(0, 0, 0, 0.85);
+        }
+    }
+    .search-loading {
+        position: absolute;
+        right: 63px;
+        top: 15px;
+        animation: spinner 1s linear infinite;
+    }
+    @keyframes spinner {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    .search-clear {
+        margin: 0px 6px;
+        color: rgba(0, 0, 0, 0.35);
+    }
+    .search-split {
+        width: 1px;
+        height: 28px;
+        margin: -3px 0;
+        background: rgba(22, 24, 35, 0.12);
+        z-index: 1;
+    }
+    .search-btn {
+        padding: 11px 20px 11px 12px;
+        margin: -12px -20px;
+        font-size: 0;
+        cursor: pointer;
+        margin-left: 0;
+        .search-icon {
+            color: rgba(0, 0, 0, 0.35);
+        }
+        &:hover {
+            background-color: rgba(22, 24, 35, 0.1);
+        }
+        &:hover > .search-icon {
+            color: rgba(0, 0, 0, 0.85);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .search-container {
+        display: none;
+    }
+}
+@media (max-width: 576px) {
+    .search-container {
+        width: 280px;
+    }
+}

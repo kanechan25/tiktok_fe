@@ -1,0 +1,12 @@
+<svg
+    class="header__search-icon left"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+>
+    <path
+        class="header__search-icon-logo"
+        stroke-linecap="round"
+        stroke-width="1.5"
+        d="M15.028 15.334l4.644 4.644m-2.889-8.88a5.99 5.99 0 01-5.991 5.991 5.99 5.99 0 110-11.983 5.99 5.99 0 015.991 5.992z"
+    ></path>
+</svg>
