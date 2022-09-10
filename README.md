@@ -1,6 +1,6 @@
 # <img src="https://github.com/kanechan25/kanechan25/blob/main/img/interface/logo_ce2dev.png" width="30px"> Hi, I'm Khoa Tran <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px" height="25px"> A Full-stack Web Developer
 
-## <a href="https://frontend-bookingcare-reactjs.herokuapp.com/" target="_blank" rel="noopener noreferrer" >Click here to go to Tiktok website</a>
+## <a href="https://tiktok25.vercel.app/" target="_blank" rel="noopener noreferrer" >Click here to go to Tiktok website</a>
 
 -   Website is deployed by Heroku, and Vercel, MERN-stack: <br> <strong> MongoDb, ExpressJs, ReactJs, NodeJs </strong> <br>
 &nbsp;
