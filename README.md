@@ -18,21 +18,27 @@
 &nbsp;
 
 <br/>
-
+<br/>
+&nbsp;
 -   And of course, the Website is Responsive web design.
--   <img src="https://github.com/kanechan25/frontend-bookingcare.github.io/blob/main/src/assets/images/11_deploy/responsive_bookingcare.gif">
+<br/>
+&nbsp;
+<img src="https://github.com/kanechan25/tiktok_fe/blob/main/src/assets/img_repo/responsive.gif">
     &nbsp;
 -   Some typical features in the Website:
 <h4>Log In and Sign up: </h4>
+<img src="https://github.com/kanechan25/tiktok_fe/blob/main/src/assets/img_repo/login.gif">
+&nbsp;
 <h5>You can try with your Google Account<h5>
 
-<img src="https://github.com/kanechan25/frontend-bookingcare.github.io/blob/main/src/assets/images/11_deploy/login_signout_bookingcare.gif">
-&nbsp;
 <h4>Search Engine: </h4>
-<img src="https://github.com/kanechan25/frontend-bookingcare.github.io/blob/main/src/assets/images/11_deploy/bilingual_bookingcare.gif">
+<img src="https://github.com/kanechan25/tiktok_fe/blob/main/src/assets/img_repo/search.gif">
+&nbsp;
+<h4>Multi-tab Inbox: </h4>
+<img src="https://github.com/kanechan25/tiktok_fe/blob/main/src/assets/img_repo/inbox.gif">
 &nbsp;
 <h4>Experiences and interact with video: </h4>
-<img src="https://github.com/kanechan25/frontend-bookingcare.github.io/blob/main/src/assets/images/11_deploy/booking_bookingcare.gif">
+<img src="https://github.com/kanechan25/tiktok_fe/blob/main/src/assets/img_repo/interact.gif">
 &nbsp;
 
 <h4>And some other features... </h4>
