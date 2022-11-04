@@ -1,0 +1,38 @@
+.img-loading {
+    border: 1px solid white;
+    width: 300px;
+    height: 530px;
+    background-color: #babbbc;
+    animation: hintloading 1.5s ease-in-out 0s infinite reverse;
+    -webkit-animation: hintloading 1.5s ease-in-out 0s infinite reverse;
+}
+@keyframes hintloading {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@-webkit-keyframes hintloading {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 576px) {
+    .img-loading {
+        width: 274px;
+        height: 484px;
+    }
+}

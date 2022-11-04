@@ -28,6 +28,7 @@ function Video({ forU, data, uservideodata }) {
         rootMargin: '0px',
         threshold: 1.0,
     });
+
     const handleOnFullVisible = () => {
         if (containerRef.current) {
             containerRef.current.play();
@@ -108,6 +109,7 @@ function Video({ forU, data, uservideodata }) {
                             {isVisible ? handleOnFullVisible() : handleOnInvisible()}
                             <source src={data.url} type="video/mp4" />
                         </video>
+
                         <div className={cx('video-interact')}>
                             <div
                                 className={cx('video-interact-user')}

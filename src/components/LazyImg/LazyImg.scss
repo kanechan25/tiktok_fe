@@ -1,0 +1,11 @@
+.img-lazy {
+    border: 1px solid white;
+
+    height: 530px;
+}
+
+@media (max-width: 576px) {
+    .img-lazy {
+        height: 484px;
+    }
+}

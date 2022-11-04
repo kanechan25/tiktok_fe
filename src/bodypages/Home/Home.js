@@ -1,9 +1,11 @@
+import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Home.scss';
 import { VIDEO_LIST } from './Videos/VideoItems';
 import Video from './Videos/Video';
 import { useEffect, useState } from 'react';
 import * as userServices from '../../services/userServices';
+import LazyImg from 'src/components/LazyImg/LazyImg';
 
 const cx = classNames.bind(styles);
 const numVideo = VIDEO_LIST.length;
@@ -23,7 +25,8 @@ const userFirst = {
 };
 
 function Home() {
-    // const [idVideo, setIdVideo] = useState(1);
+    // const Video = React.lazy(() => import('./Videos/Video'));
+
     const [userIsVideoList, setUserIsVideoList] = useState([]);
 
     useEffect(() => {
@@ -38,17 +41,18 @@ function Home() {
         <div className={cx('wrapper-home')} id="home-page">
             <div className="home-container">
                 {VIDEO_LIST.map((video, index) => (
-                    <div className={cx('video-wrapper')} key={video.id}>
-                        <Video
-                            forU={true}
-                            data={video}
-                            uservideodata={
-                                userIsVideoList[video.id - 1]
-                                    ? userIsVideoList[video.id - 1]
-                                    : userFirst
-                            }
-                        />
-                    </div>
+                    // <div className={cx('video-wrapper')} key={video.id}>
+                    //     <Video
+                    //         forU={true}
+                    //         data={video}
+                    //         uservideodata={
+                    //             userIsVideoList[video.id - 1]
+                    //                 ? userIsVideoList[video.id - 1]
+                    //                 : userFirst
+                    //         }
+                    //     />
+                    // </div>
+                    <LazyImg />
                 ))}
             </div>
         </div>
